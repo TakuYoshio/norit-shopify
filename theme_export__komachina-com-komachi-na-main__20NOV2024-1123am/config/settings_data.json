@@ -1,0 +1,270 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_body_text": "#787878",
+    "color_price": "#a4b8c2",
+    "color_savings_text": "#db5972",
+    "color_borders": "#f4f4f4",
+    "color_button": "#000000",
+    "color_button_text": "#ffffff",
+    "color_sale_tag": "#db5972",
+    "color_cart_dot": "#7d8ac4",
+    "color_small_image_bg": "#ffffff",
+    "color_large_image_bg": "#0f0f0f",
+    "color_header": "#ffffff",
+    "color_header_text": "#000000",
+    "color_announcement": "#dfe3e5",
+    "color_announcement_text": "#000000",
+    "color_footer": "#808080",
+    "color_footer_text": "#ffffff",
+    "color_drawer_background": "#ffffff",
+    "color_drawer_text": "#000000",
+    "color_drawer_border": "#e8e8e1",
+    "color_drawer_button": "#111111",
+    "color_drawer_button_text": "#ffffff",
+    "color_modal_overlays": "#e6e6e6",
+    "color_image_overlay": "#000000",
+    "color_image_overlay_text_shadow": 5,
+    "page_width": 1440,
+    "spacing_page_width": 40,
+    "spacing_page_width_mobile": 15,
+    "spacing_sections": 100,
+    "spacing_sections_mobile": 48,
+    "spacing_grid": 16,
+    "spacing_grid_mobile": 8,
+    "grid_radius": 4,
+    "type_header_font_family": "montserrat_n4",
+    "type_header_font_jp": "yugochic",
+    "type_header_spacing": "75",
+    "type_header_base_size": 34,
+    "type_header_line_height": 1.5,
+    "type_header_capitalize": false,
+    "type_headers_align_text": false,
+    "type_base_font_family": "montserrat_n4",
+    "type_body_font_jp": "yugochic",
+    "type_bold_font_family": "montserrat_n4",
+    "type_base_spacing": "50",
+    "type_base_size": 16,
+    "type_base_line_height": 1.5,
+    "type_body_align_text": false,
+    "type_navigation_style": "body",
+    "type_navigation_size": 14,
+    "type_navigation_capitalize": false,
+    "type_product_style": "body",
+    "type_product_capitalize": false,
+    "type_collection_font": "body",
+    "headline_section": "h3",
+    "button_style": "round-slight",
+    "icon_weight": "3px",
+    "icon_linecaps": "miter",
+    "vendor_enable": false,
+    "product_grid_style": "normal",
+    "product_grid_image_size": "square",
+    "product_grid_image_fill": true,
+    "product_hover_image": false,
+    "type_product_size": 13,
+    "product_grid_text_align": "left",
+    "spacing_product_text_horizon": 10,
+    "spacing_product_text_vertical": 17,
+    "product_card_bg": "#eaeaea",
+    "product_card_border": "#9f9f9f",
+    "enable_swatches": false,
+    "quick_shop_enable": false,
+    "quick_shop_text": "クイックビュー",
+    "collection_grid_style": "overlaid",
+    "collection_grid_shape": "landscape2",
+    "collection_grid_image": "collection",
+    "type_collection_size": 16,
+    "collection_grid_text_align": "bottom-center",
+    "collection_grid_tint": "#000000",
+    "collection_grid_opacity": 10,
+    "collection_grid_gutter": true,
+    "cart_type": "page",
+    "cart_notes_enable": true,
+    "cart_terms_conditions_enable": false,
+    "social_facebook_link": "https://www.facebook.com/p/komachi-na-%E3%81%93%E3%81%BE%E3%81%A1%E3%81%AA-100049041956240/",
+    "social_twitter_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https://www.instagram.com/komachina.info/",
+    "social_line_link": "",
+    "favicon": "shopify://shop_images/fav.png",
+    "apple_icon": "shopify://shop_images/app3.png",
+    "search_type": "product",
+    "show_wishlist": false,
+    "show_backinstock": false,
+    "checkout_logo_image": "shopify://shop_images/logo.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#eae4df",
+    "checkout_accent_color": "#3d6268",
+    "checkout_button_color": "#3d6268",
+    "checkout_error_color": "#a96454",
+    "type_strong_font_family": "din_next_n5",
+    "cart_icon": "cart",
+    "breadcrumb": false,
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1524770014057": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/logo_black.png",
+              "logo-inverted": "shopify://shop_images/logo.png",
+              "desktop_logo_width": 150,
+              "mobile_logo_width": 80
+            }
+          },
+          "1524770292306": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "大人気！甘酒の秘密はこちら",
+              "link_text": "",
+              "link": ""
+            }
+          },
+          "5e2157b6-97b7-4f59-b5b1-3000a046582d": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "ジャーキーシリーズ特設ページOPEN！",
+              "link_text": "",
+              "link": ""
+            }
+          },
+          "announcement_GfMrdc": {
+            "type": "announcement",
+            "settings": {
+              "text": "常温品の合計5,000円以上で 送料無料!!",
+              "link_text": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1524770014057",
+          "1524770292306",
+          "5e2157b6-97b7-4f59-b5b1-3000a046582d",
+          "announcement_GfMrdc"
+        ],
+        "settings": {
+          "main_menu_link_list": "main-menu",
+          "mega_menu_images": false,
+          "header_style": "sticky",
+          "main_menu_alignment": "center-drawer",
+          "main_menu_alignment_mobile": "mobile-center",
+          "on_humburger": true,
+          "icon_mobile": true,
+          "sticky_index": true,
+          "sticky_collection": false,
+          "announcement_compact": true,
+          "announcement_above_header": true,
+          "toolbar_menu": "",
+          "toolbar_social": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "logo_social_nPnYph": {
+            "type": "logo_social",
+            "settings": {
+              "logo": "shopify://shop_images/logo_footer_db747787-e2ba-4264-805c-7dbecc8006bd.png",
+              "desktop_logo_height": 120,
+              "container_width": 16
+            }
+          },
+          "1494301487049": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": false,
+              "menu": "footer",
+              "container_width": 15
+            }
+          },
+          "menu_RLqJVE": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": true,
+              "menu": "link-list",
+              "container_width": 17
+            }
+          },
+          "menu_UFARFr": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": false,
+              "menu": "footer-menu2",
+              "container_width": 18
+            }
+          },
+          "1494292487693": {
+            "type": "newsletter",
+            "settings": {
+              "show_footer_title": true,
+              "title": "MAIL MAGAZINE",
+              "text": "<p>メールマガジンにご登録いただくと、新商品や、季節にあわせたおすすめ商品のご紹介、キャンペーン情報をいち早くお届けいたします。</p>",
+              "container_width": 34
+            }
+          }
+        },
+        "block_order": [
+          "logo_social_nPnYph",
+          "1494301487049",
+          "menu_RLqJVE",
+          "menu_UFARFr",
+          "1494292487693"
+        ],
+        "custom_css": [],
+        "settings": {
+          "show_payment_icons": false,
+          "show_copyright": true,
+          "copyright_text": "AXIE"
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "settings": {
+          "mode": false,
+          "disable_for_account_holders": true,
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.</p>",
+          "image_position": "left",
+          "show_social_icons": false,
+          "enable_newsletter": false,
+          "button_label": "Optional button",
+          "button_link": ""
+        }
+      },
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {
+          "enable": true,
+          "collection_image_enable": true
+        }
+      },
+      "footer-promotions": {
+        "type": "footer-promotions",
+        "settings": {
+          "hide_homepage": false,
+          "image_size": "wide"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

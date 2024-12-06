@@ -1,0 +1,214 @@
+
+{%- if section.settings.space_around -%}
+  <div class="index-section">
+{%- endif -%}
+{%- unless section.settings.full_width -%}
+  <div class="page-width">
+{%- endunless -%}
+
+  <div class="banner-section banner-section--{{ section.id }}">
+      <div class="grid">
+        {% for block in section.blocks %}
+        {%- liquid
+          case block.settings.width
+            when '25%'
+              assign block_width = 'small--one-whole one-quarter'
+            when '33%'
+              assign block_width = 'small--one-whole one-third'
+            when '50%'
+              assign block_width = 'small--one-whole one-half'
+            when '66%'
+              assign block_width = 'small--one-whole two-thirds'
+            when '75%'
+              assign block_width = 'small--one-whole three-quarters'
+            when '100%'
+              assign block_width = 'one-whole'
+          endcase
+        -%}
+          <div class="grid__item {{ block_width }}">
+            <a href="{{ block.settings.link }}" class="banner">
+              <div class="media aos-animate" style="height: 0; padding-bottom: {{ section.settings.height }}">
+                {%- if block.settings.image != blank -%}
+                  <div class="media__image image-wrap">
+                    {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    <img class="lazyload"
+                        data-src="{{ img_url }}"
+                        data-widths="[360, 540, 720, 900, 1080, 1600]"
+                        data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                        data-sizes="auto"
+                        alt="{{ block.settings.image.alt }}">
+                    <noscript>
+                      <img class="lazyloaded" src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}">
+                    </noscript>
+                  </div>
+                {%- else -%}
+                  <div class="image-wrap">
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+              </div>
+              <div class="banner__text {% if section.settings.alignment %} align--{{ section.settings.alignment }}{% endif %}">
+                <div class="banner__text-inner">
+                  <h4 class="banner__title">{{ block.settings.title }}</h4>
+                  <p>{{ block.settings.text }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+
+{%- unless section.settings.full_width -%}
+  </div>
+{%- endunless -%}
+{%- if section.settings.space_around -%}
+  </div>
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "カスタムグリッド for Banner",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full page width",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "space_around",
+        "label": "上下に余白を追加",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "テキスト配置",
+        "default": "bottom-left",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top"
+          },
+          {
+            "value": "middle-center",
+            "label": "Center"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type":"select",
+        "id":"height",
+        "label":"グリッドの高さ",
+        "options": [
+          {
+            "value": "33%",
+            "label": "33%"
+          },
+          {
+            "value": "50%",
+            "label": "50%"
+          },
+          {
+            "value": "56.25%",
+            "label": "56%"
+          },
+          {
+            "value": "66.6666%",
+            "label": "66%"
+          },
+          {
+            "value": "75%",
+            "label": "75%"
+          },
+          {
+            "value": "100%",
+            "label": "100%"
+          },
+          {
+            "value": "133.3333%",
+            "label": "133%"
+          },
+          {
+            "value": "150%",
+            "label": "150%"
+          },
+          {
+            "value": "100vh",
+            "label": "100vh"
+          }
+        ],
+        "default":"100vh"
+      }
+    ],
+    "blocks":[{
+      "type":"collection-logo",
+      "name":"バナー",
+      "settings":[{
+        "type":"url",
+        "id":"link",
+        "label":"リンク"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"バナー画像"
+      },
+      {
+        "type":"text",
+        "id":"title",
+        "label":"タイトル"
+      },
+      {
+        "type":"text",
+        "id":"text",
+        "label":"テキスト"
+      },
+      {
+        "type":"select",
+        "id":"width",
+        "label":"Column Size",
+        "options": [
+          {
+            "value": "25%",
+            "label": "25%"
+          },
+          {
+            "value": "33%",
+            "label": "33%"
+          },
+          {
+            "value": "50%",
+            "label": "50%"
+          },
+          {
+            "value": "66%",
+            "label": "66%"
+          },
+          {
+            "value": "75%",
+            "label": "75%"
+          },
+          {
+            "value": "100%",
+            "label": "100%"
+          }
+        ],
+        "default":"50%"
+      }]
+    }],
+    "presets":[{
+      "name": "カスタムグリッド for Banner",
+      "category": "Advanced layout"
+    }]
+  }
+{% endschema %}
+

@@ -1,0 +1,257 @@
+{%- paginate customer.addresses by 5 -%}
+
+<div class="page-width page-width--narrow page-content">
+  <header class="section-header">
+    <h1 class="h2 section-header__title">{{ 'customer.account.title' | t }}</h1>
+  </header>
+
+  <div class="account__page">
+
+    <div class="account__page-col">
+      {%- render 'account-menu' -%}
+    </div>
+
+    <div class="account__page-col">
+      <h1 class="h4">{{ 'customer.addresses.title' | t }}</h1>
+
+
+      <div class="grid grid--no-gutters address-wrap">
+
+        <div class="grid__item medium-up--one-half">
+          <div class="address-box">
+            <button type="button" class="btn btn--secondary btn--full address-new-toggle">{{ 'customer.addresses.add_new' | t }}</button>
+          </div>
+        </div>
+
+        {% for address in customer.addresses %}
+        <div class="grid__item medium-up--one-half"><div class="address-box">
+          {% if address == customer.default_address %}
+            <p class="h5">{{ 'customer.addresses.default' | t }}</p>
+
+            {% assign company = customer.default_address.company %}
+            {% assign last_name = customer.default_address.last_name %}
+            {% assign first_name = customer.default_address.first_name %}
+            {% assign postcode = customer.default_address.zip %}
+            {% assign province = customer.default_address.province %}
+            {% assign city = customer.default_address.city %}
+            {% assign address1 = customer.default_address.address1 %}
+            {% assign address2 = customer.default_address.address2 %}
+      
+            <p>{{company}}<br>
+            {{last_name | append: first_name}}<br>
+            〒{{postcode}}<br>
+            {{province}}{{city}}{{address1}}<br>
+            {{address2}}<br>
+            </p>
+          {% else %}
+          <p class="h5">{{ 'customer.addresses.title' | t }} {{ forloop.index }}</p>
+
+          {% assign company = address.company %}
+          {% assign last_name = address.last_name %}
+          {% assign first_name = address.first_name %}
+          {% assign postcode = address.zip %}
+          {% assign province = address.province %}
+          {% assign city = address.city %}
+          {% assign address1 = address.address1 %}
+          {% assign address2 = address.address2 %}
+
+          <p>{{company}}<br>
+          {{last_name | append: first_name}}<br>
+          〒{{postcode}}<br>
+          {{province}}{{city}}{{address1}}<br>
+          {{address2}}<br>
+          </p>
+          {% endif %}
+
+
+          <div class="btn-wrap">
+            <button type="button" class="btn btn--small address-edit-toggle" data-form-id="{{ address.id }}">{{ 'customer.addresses.edit' | t }}</button>
+            <button type="button" class="btn btn--secondary btn--small address-delete" data-form-id="{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">{{ 'customer.addresses.delete' | t }}</button>
+          </div>
+
+          <div id="EditAddress_{{ address.id }}" class="form-vertical address-form js-address-form text-left hide">
+            <div class="address-form__overlay address-edit-toggle" data-form-id="{{ address.id }}"></div>
+            <div class="address-form__inner page-width page-width--narrow page-content">
+            {% form 'customer_address', address %}
+
+              <h2 class="actitle">{{ 'customer.addresses.edit_address' | t }}</h2>
+              <button type="button" class="close address-edit-toggle" data-form-id="{{ address.id }}">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+              </button>
+
+              <div class="grid grid--small">
+                <div class="grid__item one-half small--one-whole">
+                  <label for="AddressLastName_{{form.id}}">{{ 'customer.addresses.last_name' | t }}</label>
+                  <input type="text" id="AddressLastName_{{form.id}}" class="input-full" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
+                </div>
+
+                <div class="grid__item one-half small--one-whole">
+                  <label for="AddressFirstName_{{form.id}}">{{ 'customer.addresses.first_name' | t }}</label>
+                  <input type="text" id="AddressFirstName_{{form.id}}" class="input-full" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words">
+                </div>
+              </div>
+
+              <label for="AddressCompany_{{form.id}}">{{ 'customer.addresses.company' | t }}</label>
+              <input type="text" id="AddressCompany_{{form.id}}" class="input-full" name="address[company]" value="{{form.company}}" autocapitalize="words">
+
+              <div class="grid grid--small">
+                <div class="grid__item medium-up--one-half">
+                  <label for="AddressZip_{{form.id}}">{{ 'customer.addresses.zip' | t }}</label>
+                  <input type="text" id="AddressZip_{{form.id}}" class="input-full" name="address[zip]" value="{{form.zip}}" autocapitalize="characters">
+                </div>
+
+                <div class="grid__item medium-up--one-half" id="AddressProvinceContainer_{{form.id}}" style="display: none;">
+                  <label for="AddressProvince_{{form.id}}">{{ 'customer.addresses.province' | t }}</label>
+                  <select id="AddressProvince_{{form.id}}" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
+                </div>
+              </div>
+
+              <label for="AddressCity_{{form.id}}">{{ 'customer.addresses.city' | t }}</label>
+              <input type="text" id="AddressCity_{{form.id}}" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
+
+              <label for="AddressAddress1_{{form.id}}">{{ 'customer.addresses.address1' | t }}</label>
+              <input type="text" id="AddressAddress1_{{form.id}}" class="input-full" name="address[address1]" value="{{form.address1}}" autocapitalize="words">
+
+              <label for="AddressAddress2_{{form.id}}">{{ 'customer.addresses.address2' | t }}</label>
+              <input type="text" id="AddressAddress2_{{form.id}}" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
+
+              <div
+                style="display: none;"
+                class="js-address-country"
+                data-country-id="AddressCountry_{{form.id}}"
+                data-province-container-id="AddressProvinceContainer_{{form.id}}"
+                data-province-id="AddressProvince_{{form.id}}">
+                <label for="AddressCountry_{{form.id}}">{{ 'customer.addresses.country' | t }}</label>
+                <select id="AddressCountry_{{form.id}}" class="input-full" name="address[country]" data-default="{{form.country}}"><option selected value="Japan" data-provinces='[["Hokkaidō","北海道"],["Aomori","青森県"],["Iwate","岩手県"],["Miyagi","宮城県"],["Akita","秋田県"],["Yamagata","山形県"],["Fukushima","福島県"],["Ibaraki","茨城県"],["Tochigi","栃木県"],["Gunma","群馬県"],["Saitama","埼玉県"],["Chiba","千葉県"],["Tōkyō","東京都"],["Kanagawa","神奈川県"],["Niigata","新潟県"],["Toyama","富山県"],["Ishikawa","石川県"],["Fukui","福井県"],["Yamanashi","山梨県"],["Nagano","長野県"],["Gifu","岐阜県"],["Shizuoka","静岡県"],["Aichi","愛知県"],["Mie","三重県"],["Shiga","滋賀県"],["Kyōto","京都府"],["Ōsaka","大阪府"],["Hyōgo","兵庫県"],["Nara","奈良県"],["Wakayama","和歌山県"],["Tottori","鳥取県"],["Shimane","島根県"],["Okayama","岡山県"],["Hiroshima","広島県"],["Yamaguchi","山口県"],["Tokushima","徳島県"],["Kagawa","香川県"],["Ehime","愛媛県"],["Kōchi","高知県"],["Fukuoka","福岡県"],["Saga","佐賀県"],["Nagasaki","長崎県"],["Kumamoto","熊本県"],["Ōita","大分県"],["Miyazaki","宮崎県"],["Kagoshima","鹿児島県"],["Okinawa","沖縄県"]]'>日本</option></select>
+              </div>
+
+              <div class="grid grid--small">
+                <div class="grid__item">
+                  <label for="AddressPhone_{{form.id}}">{{ 'customer.addresses.phone' | t }}</label>
+                  <input type="tel" id="AddressPhone_{{form.id}}" class="input-full" name="address[phone]" value="{{form.phone}}">
+                </div>
+              </div>
+
+              <p>
+                {{ form.set_as_default_checkbox }}
+                <label for="address_default_address_{{form.id}}" class="inline">{{ 'customer.addresses.set_default' | t }}</label>
+              </p>
+
+              <p>
+                <button type="submit" class="btn">
+                  {{ 'customer.addresses.update' | t }}
+                </button>
+              </p>
+              <p>
+                <button type="button" class="text-link address-edit-toggle" data-form-id="{{ form.id }}">{{ 'customer.addresses.cancel' | t }}</button>
+              </p>
+            {% endform %}
+            </div>
+          </div>
+        </div></div>
+        {% endfor %}
+
+        {% if paginate.pages > 1 %}
+          {% include 'pagination' %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="AddressNewForm" class="form-vertical address-form js-address-form text-left hide">
+  <div class="address-form__overlay address-new-toggle"></div>
+  <div class="address-form__inner page-width page-width--narrow page-content">
+  {% form 'customer_address', customer.new_address %}
+
+    <h2 class="actitle">{{ 'customer.addresses.add_new' | t }}</h2>
+    <button type="button" class="close address-new-toggle">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+    </button>
+
+    <div class="grid grid--small">
+
+      <div class="grid__item one-half small--one-whole">
+        <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+        <input type="text" id="AddressLastNameNew" class="input-full" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
+      </div>
+
+      <div class="grid__item one-half small--one-whole">
+        <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+        <input type="text" id="AddressFirstNameNew" class="input-full" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words">
+      </div>
+
+    </div>
+
+    <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
+    <input type="text" id="AddressCompanyNew" class="input-full" name="address[company]" value="{{form.company}}" autocapitalize="words">
+
+    <div class="grid grid--small">
+      <div class="grid__item medium-up--one-half">
+        <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+        <input type="text" id="AddressZipNew" class="input-full" name="address[zip]" value="{{form.zip}}" autocapitalize="characters">
+      </div>
+
+      <div class="grid__item medium-up--one-half" id="AddressProvinceContainerNew">
+        <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+        <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
+      </div>
+    </div>
+
+    <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+    <input type="text" id="AddressCityNew" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
+
+
+    <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
+    <input type="text" id="AddressAddress1New" class="input-full" name="address[address1]" value="{{form.address1}}" autocapitalize="words">
+
+    <label for="AddressAddress2New">{{ 'customer.addresses.address2' | t }}</label>
+    <input type="text" id="AddressAddress2New" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
+
+    <div class="grid grid--small">
+      <div style="display: none;"
+        class="grid__item medium-up--one-half js-address-country"
+        data-country-id="AddressCountryNew"
+        data-province-container-id="AddressProvinceContainerNew"
+        data-province-id="AddressProvinceNew">
+        <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+        <select id="AddressCountryNew" class="input-full" name="address[country]" data-default="{{form.country}}"><option selected value="Japan" data-provinces='[["Hokkaidō","北海道"],["Aomori","青森県"],["Iwate","岩手県"],["Miyagi","宮城県"],["Akita","秋田県"],["Yamagata","山形県"],["Fukushima","福島県"],["Ibaraki","茨城県"],["Tochigi","栃木県"],["Gunma","群馬県"],["Saitama","埼玉県"],["Chiba","千葉県"],["Tōkyō","東京都"],["Kanagawa","神奈川県"],["Niigata","新潟県"],["Toyama","富山県"],["Ishikawa","石川県"],["Fukui","福井県"],["Yamanashi","山梨県"],["Nagano","長野県"],["Gifu","岐阜県"],["Shizuoka","静岡県"],["Aichi","愛知県"],["Mie","三重県"],["Shiga","滋賀県"],["Kyōto","京都府"],["Ōsaka","大阪府"],["Hyōgo","兵庫県"],["Nara","奈良県"],["Wakayama","和歌山県"],["Tottori","鳥取県"],["Shimane","島根県"],["Okayama","岡山県"],["Hiroshima","広島県"],["Yamaguchi","山口県"],["Tokushima","徳島県"],["Kagawa","香川県"],["Ehime","愛媛県"],["Kōchi","高知県"],["Fukuoka","福岡県"],["Saga","佐賀県"],["Nagasaki","長崎県"],["Kumamoto","熊本県"],["Ōita","大分県"],["Miyazaki","宮崎県"],["Kagoshima","鹿児島県"],["Okinawa","沖縄県"]]'>日本</option></select>
+      </div>
+
+      <div class="grid__item">
+        <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+        <input type="tel" id="AddressPhoneNew" class="input-full" name="address[phone]" value="{{form.phone}}">
+      </div>
+    </div>
+
+    <p>
+      {{ form.set_as_default_checkbox }}
+      <label for="address_default_address_new" class="inline">{{ 'customer.addresses.set_default' | t }}</label>
+    </p>
+
+    <p>
+      <button type="submit" class="btn">
+        {{ 'customer.addresses.add' | t }}
+      </button>
+    </p>
+    <p>
+      <button type="button" class="text-link address-new-toggle">{{ 'customer.addresses.cancel' | t }}</button>
+    </p>
+
+  {% endform %}
+  </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<script src="//ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+{%- endpaginate -%}

@@ -1,0 +1,8 @@
+<div class="account-menu rte">
+  <ul>
+    <li><a href="{{ routes.account_url }}" class="account-menu__link">{{ 'customer.orders.title' | t }}</a></li>
+    <li><a href="{{ routes.account_addresses_url }}" class="account-menu__link">{{ 'customer.addresses.title' | t }}</a></li>
+    {%- if settings.show_wishlist and isModal != true -%}<li><a href="/tools/prime-review/favorites.html" class="account-menu__link">お気に入り一覧</a></li>{% endif %}
+    <li><a href="{{ routes.account_logout_url }}" class="btn btn--small btn--secondary">{{ 'layout.customer.log_out'| t }}</a></li>
+  </ul>
+</div>

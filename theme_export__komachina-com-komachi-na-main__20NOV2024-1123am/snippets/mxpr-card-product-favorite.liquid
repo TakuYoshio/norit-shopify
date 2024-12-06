@@ -1,0 +1,339 @@
+{% assign section_suffix =  section.id | split: '-' | last %}
+{% unless section_suffix == 'recommendations' %}
+  {% assign exitst = false %}
+
+  {% assign variant_list_string = '' %}
+
+  {% assign hash = section.id | md5 %}
+  {% assign product_hash = product.id | append: '-' | append: hash %}
+
+  {% assign myVariants = customer.metafields.prime_review.favorite_product_variants.value %}
+  {% if myVariants %}
+    {% for _variant in myVariants.variants %}
+      {% if _variant.handle == product.handle %}
+        {% assign exist = true %}
+      {% endif %}
+      {% assign variant_list_string = variant_list_string | append: ',' | append: _variant.variant %}
+    {% endfor %}
+  {% else %}
+    {% for _variant in customer.metafields.prime_review.favorite_product_variants.variants %}
+      {% if _variant.handle == product.handle %}
+        {% assign exist = true %}
+      {% endif %}
+      {% assign variant_list_string = variant_list_string | append: ',' | append: _variant.variant %}
+    {% endfor %}
+  {% endif %}
+
+  {% if shop.metafields.PrimeReview.collectionSettings.heartRgba %}
+    {% assign heart_rgba = shop.metafields.PrimeReview.collectionSettings.heartRgba %}
+  {% else %}
+    {% assign heart_rgba = "red" %}
+  {% endif %}
+
+  {% if shop.metafields.PrimeReview.collectionSettings.rgba %}
+    {% assign border_rgba = shop.metafields.PrimeReview.collectionSettings.rgba %}
+  {% else %}
+    {% assign border_rgba = "white" %}
+  {% endif %}
+
+  {% if shop.metafields.PrimeReview.collectionSettings.buttonPosition %}
+    {% assign position = shop.metafields.PrimeReview.collectionSettings.buttonPosition %}
+  {% endif %}
+
+  <style>
+    .prime-review-favorites-product-{{ product_hash }}{
+      position: absolute;
+      {% if position == 'left-top' %}
+        top: 0;
+        left: 0;
+      {% elsif position == 'left-bottom' %}
+        bottom: 0;
+        left: 0;
+      {% elsif position == 'right-bottom' %}
+        bottom: 0;
+        right: 0;
+      {% else %}
+        top: 0;
+        right: 0;
+      {% endif %}
+      padding: 10px;
+      width: 50px;
+      height: 50px;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .prime-review-favorites-heart-{{ product_hash }}-enable{
+      fill: {{ heart_rgba }};
+    }
+    .prime-review-favorites-heart-{{ product_hash }}-disable{
+      fill: {{ border_rgba }};
+    }
+    .prime-review-favorites-heart-border-{{ product_hash }}-enable{
+      stroke: {{ border_rgba }};
+    }
+    .prime-review-favorites-heart-border-{{ product_hash }}-disable{
+      stroke: {{ heart_rgba }};
+    }
+    .prime-review-favorites-product-{{ product_hash }}-variants{
+      display: none;
+      position: absolute;
+      {% if position == 'left-top' %}
+        top: 20px;
+        left: 5px;
+      {% elsif position == 'left-bottom' %}
+        bottom: 20px;
+        left: 5px;
+      {% elsif position == 'right-bottom' %}
+        bottom: 20px; /* Y軸の位置 */
+        right: 5px;
+      {% else %}
+        top: 20px;
+        right: 5px;
+      {% endif %}
+      z-index: 3;
+      background-color: white;
+      padding-left: 0;
+      list-style-type: none;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      max-height: 217px;
+      overflow: scroll;
+    }
+    .prime-review-favorites-product-{{ product_hash }}-variants li{
+      position: relative;
+      z-index: 3;
+      padding: 0 10px 0 1.6em;
+      min-width: 100px;
+      border-top: 1px solid #ddd;
+      text-align: left;
+      color: #333;
+    }
+    .prime-review-favorites-product-{{ product_hash }}-variants li.exist:after, .prime-review-favorites-product-{{ product_hash }}-variants li.exist:hover:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: .55em;
+      left: .5em;
+      width: 0.8em;
+      height: .4em;
+      border-left: 2px solid #9c9c9c;
+      border-bottom: 2px solid #9c9c9c;
+      transform: rotate(-45deg);
+    }
+    .prime-review-favorites-product-{{ product_hash }}-variants li:first-child{
+      border-top: 0;
+    }
+    .prime-review-favorites-product-{{ product_hash }}-variants li:hover{
+      background-color: #ccc;
+    }
+    .prime-review-favorites-product-{{ product_hash }}-variants li:hover:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: .55em;
+      left: .5em;
+      width: 0.8em;
+      height: .4em;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg);
+    }
+    .prime-review-favorites-product-{{ product_hash }}-variants .exist{
+      color: red;
+    }
+  </style>
+
+  <div class="prime-review-favorites-product-{{ product_hash }}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <g class="prime-review-favorites-heart-{{ product_hash }} prime-review-favorites-heart-{{ product_hash }}{% if exist %}-enable{% else %}-disable{% endif %}" transform="scale(0.3 0.3)">
+        <path class="prime-review-favorites-heart-border-{{ product_hash }} prime-review-favorites-heart-border-{{ product_hash }}{% if exist %}-enable{% else %}-disable{% endif %}" stroke-width="5px" d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z"></path>
+      </g>
+    </svg>
+  </div>
+  <ul class="prime-review-favorites-product-{{ product_hash }}-variants" data-has-only-default-variant="{% if product.has_only_default_variant %}true{% endif %}">
+    {% for _variant in product.variants %}
+      <li class="prime-review-variant-{{ _variant.id }} prime-review-variant-{{ _variant.id }}-{{ hash }} {% if variant_list_string contains _variant.id %}exist{% endif %}" data-product-hash="{{ product_hash }}" data-variant-id="{{ _variant.id }}" data-handle="{{ product.handle }}" style="cursor: pointer;" onclick="window.toggleFavorite(this)">{{ _variant.title }}</li>
+    {% endfor %}
+  </ul>
+
+  <script defer>
+    /* {{ template }} */
+    window.addEventListener('load', function () {
+      if(!window.primeReviewInitialized){
+        window.handleClick = (productHash) => {
+          const variants = document.querySelector(`.prime-review-favorites-product-${ productHash }-variants`);
+          if(variants.dataset.hasOnlyDefaultVariant == "true"){
+            window.toggleFavorite(variants.firstElementChild);
+          }else{
+            if(variants.style.display == 'block'){
+              variants.style.display = 'none';
+            }else{
+              variants.style.display = 'block';
+            }          
+          }
+        };
+        window.refreshHeart = (productHash) => {
+          const list = document.querySelectorAll(`.prime-review-favorites-product-${productHash}-variants *`);
+          let exist = false;
+          const heart = document.querySelector(`.prime-review-favorites-heart-${productHash}`);
+          const border = document.querySelector(`.prime-review-favorites-heart-border-${productHash}`);
+          for(const child of list){
+            if(child.classList.contains("exist")){
+              exist = true;
+            }
+          }
+          if(exist){
+            heart.classList.remove(`prime-review-favorites-heart-${productHash}-disable`);
+            heart.classList.add(`prime-review-favorites-heart-${productHash}-enable`);
+            border.classList.remove(`prime-review-favorites-heart-border-${productHash}-disable`)
+            border.classList.add(`prime-review-favorites-heart-border-${productHash}-enable`)
+          }else{
+            heart.classList.remove(`prime-review-favorites-heart-${productHash}-enable`);
+            heart.classList.add(`prime-review-favorites-heart-${productHash}-disable`);
+            border.classList.remove(`prime-review-favorites-heart-border-${productHash}-enable`)
+            border.classList.add(`prime-review-favorites-heart-border-${productHash}-disable`)
+          }
+        }
+        window.getVariantInfo = (handle, variantId) => {
+          const product = window.mxProductInfoCollection[handle];
+          let variant;
+          if (variantId) {
+            variant = product.variants.find(v => v.id == variantId);
+          }
+          if (!variant) {
+            variant = product.variants[0];
+          }
+          const variantInfo = {
+            imageUrl: product.featured_image || null,
+            url: `/products/${product.handle}`,
+            title: product.title,
+            handle: product.handle,
+            variantTitle: variant.public_title,
+            variantId: variant.id,
+            price: variant.price,
+            tags: product.tags
+          };
+          if(variant){
+            variantInfo.variantId = variant.id;
+            variantInfo.price = variant.price;
+          }else{
+            const prices = product.variants.map(v => v.price);
+            variantInfo.minPrice = Math.min(...prices);
+            variantInfo.maxPrice = Math.max(...prices);
+          }
+
+          return variantInfo;
+          
+        }
+        window.changeFloatCount = (add, variantId) => {
+          const floatCountDiv = document.getElementById("prime-review-favorites-count");
+          if(floatCountDiv){
+            let count = Number(floatCountDiv.innerText) || 0;
+            count = count + add;
+            floatCountDiv.innerText = String(count);
+            if(count <= 0){
+              floatCountDiv.style.display = "none";
+            }else{
+              floatCountDiv.style.display = "block";
+            }
+          }
+          const variants = document.querySelectorAll(`li.prime-review-variant-${variantId}`);
+          for(const variant of variants){
+            if(add == 1){
+              variant.classList.add("exist");
+            }else{
+              variant.classList.remove("exist");
+            }
+            window.refreshHeart(variant.dataset.productHash);
+          }
+        }
+        window.submitFavorite = async (url, handle, variant) => {
+          const fetchOptions = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              handle: handle,
+              variant: variant,
+            }),
+          };
+          await fetch(url, fetchOptions);
+        }
+        window.toggleFavorite = (source) => {
+          const variantId = source.dataset.variantId;
+          const productId = source.dataset.productId;
+          const handle = source.dataset.handle;
+          const productHash = source.dataset.productHash;
+          {% if customer %}
+            if (source.classList.contains("exist")) {
+              window.submitFavorite("/tools/prime-review/api/removeFavorite", handle, variantId);
+              window.changeFloatCount(-1, variantId);
+            }else{
+              window.submitFavorite("/tools/prime-review/api/addFavorite", handle, variantId);
+              window.changeFloatCount(1, variantId);
+            }
+          {% else %}
+           // {{ shop.metafields.PrimeReview.globalSettings.favoriteAllowGuest }}
+            {% if shop.metafields.PrimeReview.globalSettings.favoriteAllowGuest %}
+              const favorites = JSON.parse(localStorage.getItem('mxpr-favorites')) || [];
+              if (favorites.some(favorite => favorite.variantId == variantId)) {
+                const index = favorites.findIndex(favorite => favorite.variantId == variantId);
+                if (index >= 0) {
+                  favorites.splice(index, 1);
+                  localStorage.setItem('mxpr-favorites', JSON.stringify(favorites));
+                }
+                window.changeFloatCount(-1, variantId);
+              }else{
+                const variantInfo = getVariantInfo(handle, variantId);
+                favorites.unshift(variantInfo);
+                localStorage.setItem('mxpr-favorites', JSON.stringify(favorites));
+                window.changeFloatCount(1, variantId);
+              }
+            {% else %}
+              if(confirm("この機能を利用するにはログインが必要です。")){
+                location.href = "/account/login?checkout_url={{ request.path }}";
+              }
+            {% endif %}
+          {% endif %}
+          if(navigator.maxTouchPoints > 0){
+            const variants = document.querySelector(`.prime-review-favorites-product-${ productHash }-variants`);
+            variants.style.display = 'none';
+          }
+        }
+        window.checkCookies = (productHash, handle) => {
+          const favorites = JSON.parse(localStorage.getItem('mxpr-favorites')) || [];
+          if (favorites.some(favorite => favorite.handle == handle)) {
+            const heart = document.querySelector(`.prime-review-favorites-heart-${productHash}`);
+            heart.classList.remove(`prime-review-favorites-heart-${productHash}-disable`);
+            heart.classList.add(`prime-review-favorites-heart-${productHash}-enable`);
+            const border = document.querySelector(`.prime-review-favorites-heart-border-${productHash}`);
+            border.classList.remove(`prime-review-favorites-heart-border-${productHash}-disable`);
+            border.classList.add(`prime-review-favorites-heart-border-${productHash}-enable`);
+          }
+          const list = document.querySelectorAll(`.prime-review-favorites-product-${productHash}-variants *`);
+          for(const child of list){
+            if(favorites.some(favorite => child.dataset.variantId == String(favorite.variantId))){
+              child.classList.add('exist');
+            }
+          }
+        }
+        window.primeReviewInitialized = true;
+      }
+      document.querySelector('.prime-review-favorites-product-{{ product_hash }}').addEventListener('click', () => window.handleClick("{{ product_hash }}"), true);
+      document.querySelector('.prime-review-favorites-product-{{ product_hash }}-variants').addEventListener('mouseleave', (e) => {
+        e.target.style.display = 'none';
+      });
+      {% unless customer %}
+        {% if shop.metafields.PrimeReview.globalSettings.favoriteAllowGuest %}
+          window.checkCookies("{{ product_hash }}", "{{ product.handle }}");
+        {% endif %}
+      {% endunless %}
+      if(!window.mxProductInfoCollection){
+        window.mxProductInfoCollection = {};
+      }
+      window.mxProductInfoCollection["{{ product.handle }}"] = {{ product | json }};
+    });
+
+  </script>
+{% endunless %}

@@ -1,0 +1,271 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "bg_color": "#dde2ec",
+        "text_color": "#000000",
+        "width": "50%"
+      }
+    },
+    "1660733845fe2e443f": {
+      "type": "rich-text",
+      "blocks": {
+        "166073384534c70411-0": {
+          "type": "heading",
+          "settings": {
+            "title": "2022 AW TUNA COLLECTION"
+          }
+        },
+        "312c02e3-6824-41f1-9dde-ba14a85ce5f2": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>TUNA 2022年秋冬シーズンは、シンプルでアイコニックな着こなしを叶えてくれるコレクションです。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "166073384534c70411-0",
+        "312c02e3-6824-41f1-9dde-ba14a85ce5f2"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "divider": false
+      }
+    },
+    "1661922588d566606a": {
+      "type": "advanced-content-lookbook",
+      "blocks": {
+        "3d10e3e3-2940-4691-a7d7-1ffc490e5910": {
+          "type": "look",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/l1.jpg",
+            "text": "<p>TOPS : <a href=\"/products/tuna30009\" title=\"FISHING GADGET\n TEE\">FISHING GADGET TEE</a></p>",
+            "alignment": "center",
+            "width": "50%",
+            "padding": false
+          }
+        },
+        "d2ff34fa-eb24-4f51-a607-22fd5e5b1d68": {
+          "type": "look",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/l2.jpg",
+            "text": "<p>TOPS : <a href=\"/products/tuna30009\" title=\"FISHING GADGET\n TEE\">FISHING GADGET TEE</a></p>",
+            "alignment": "center",
+            "width": "50%",
+            "padding": true
+          }
+        },
+        "21db6158-0168-47b1-850d-44a315ecd264": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna30009",
+            "image": "shopify://shop_images/l3.jpg",
+            "text": "<p>TOPS : <a href=\"/products/tuna30009\" title=\"FISHING GADGET\n TEE\">FISHING GADGET TEE</a></p>",
+            "alignment": "center",
+            "width": "100%",
+            "padding": false
+          }
+        },
+        "3850e5a7-4e09-4d42-a4a2-6951bbd701b1": {
+          "type": "look",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/l21.jpg",
+            "text": "<p>TOPS : <a href=\"/products/tuna30009\" title=\"FISHING GADGET\n TEE\">FISHING GADGET TEE</a></p><p>BOTTOMS : <a href=\"/products/tuna40004\" title=\"SAMURAI SWEAT PANTS\">SAMURAI SWEAT</a></p>",
+            "alignment": "top",
+            "width": "33%",
+            "padding": false
+          }
+        },
+        "47887191-88c5-4cc2-a95d-f666a3fd1de1": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna40004",
+            "image": "shopify://shop_images/l22.jpg",
+            "text": "<p>BOTTOMS : <a href=\"/products/tuna40004\" title=\"SAMURAI SWEAT PANTS\">SAMURAI SWEAT</a></p>",
+            "alignment": "top",
+            "width": "33%",
+            "padding": true
+          }
+        },
+        "c1854a2d-b4bf-439e-812c-1604e4052465": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna40004",
+            "image": "shopify://shop_images/l23.jpg",
+            "text": "<p>BOTTOMS : <a href=\"/products/tuna40004\" title=\"SAMURAI SWEAT PANTS\">SAMURAI SWEAT</a></p>",
+            "alignment": "top",
+            "width": "33%",
+            "padding": false
+          }
+        },
+        "11beef14-816b-4ced-bce3-90df6a92a889": {
+          "type": "look",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/hhre1.jpg",
+            "text": "<p>TOPS : <a href=\"/products/tuna30001\" title=\"TUNA TEE\">TUNA TEE</a></p><p>BOTTOMS : <a href=\"/products/tuna40004\" title=\"SAMURAI SWEAT PANTS\">SAMURAI SWEAT</a></p>",
+            "alignment": "center",
+            "width": "100%",
+            "padding": false
+          }
+        },
+        "2c84c6a5-a564-4775-8d7b-e7fa82a7a539": {
+          "type": "look",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/l31.jpg",
+            "text": "<p>OUTER: <a href=\"/products/tuna10008\" title=\"FISH TAIL MA-1\">FISH TAIL MA-1</a></p>",
+            "alignment": "center",
+            "width": "66%",
+            "padding": false
+          }
+        },
+        "a7ff510c-6bbb-460f-aa31-37729a5967c2": {
+          "type": "look",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/l32.jpg",
+            "text": "<p>OUTER: <a href=\"/products/tuna10008\" title=\"FISH TAIL MA-1\">FISH TAIL MA-1</a></p>",
+            "alignment": "top",
+            "width": "33%",
+            "padding": false
+          }
+        },
+        "4fd94496-ebc8-45a4-8a91-8b89a08358bc": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna60006",
+            "image": "shopify://shop_images/ll1.jpg",
+            "text": "",
+            "alignment": "top",
+            "width": "25%",
+            "padding": false
+          }
+        },
+        "d9504c2a-07c6-4b86-9330-01b587d2aecc": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna60006",
+            "image": "shopify://shop_images/ll2.jpg",
+            "text": "",
+            "alignment": "top",
+            "width": "25%",
+            "padding": false
+          }
+        },
+        "f6c1618d-5b69-43e5-ab4f-90c4f7d04f90": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna60006",
+            "image": "shopify://shop_images/ll3.jpg",
+            "text": "",
+            "alignment": "top",
+            "width": "25%",
+            "padding": false
+          }
+        },
+        "67eaece2-1899-48be-bddd-f74c7eee7bef": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna60006",
+            "image": "shopify://shop_images/ll4.jpg",
+            "text": "",
+            "alignment": "top",
+            "width": "25%",
+            "padding": false
+          }
+        },
+        "0eb2d6d3-090d-4666-93f0-939dc463e837": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna50007",
+            "image": "shopify://shop_images/ll5.jpg",
+            "text": "",
+            "alignment": "center",
+            "width": "25%",
+            "padding": false
+          }
+        },
+        "65475bc4-1627-4737-99a4-93ad65ce6305": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna50007",
+            "image": "shopify://shop_images/ll6.jpg",
+            "text": "",
+            "alignment": "center",
+            "width": "25%",
+            "padding": false
+          }
+        },
+        "8f08def3-3615-4f62-b650-e640238e085b": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna50007",
+            "image": "shopify://shop_images/ll7.jpg",
+            "text": "",
+            "alignment": "center",
+            "width": "25%",
+            "padding": false
+          }
+        },
+        "a65d99d9-b69b-4da6-bfaf-e8b6d04f05b8": {
+          "type": "look",
+          "settings": {
+            "link": "shopify://products/tuna50007",
+            "image": "shopify://shop_images/ll8.jpg",
+            "text": "",
+            "alignment": "center",
+            "width": "25%",
+            "padding": false
+          }
+        }
+      },
+      "block_order": [
+        "3d10e3e3-2940-4691-a7d7-1ffc490e5910",
+        "d2ff34fa-eb24-4f51-a607-22fd5e5b1d68",
+        "21db6158-0168-47b1-850d-44a315ecd264",
+        "3850e5a7-4e09-4d42-a4a2-6951bbd701b1",
+        "47887191-88c5-4cc2-a95d-f666a3fd1de1",
+        "c1854a2d-b4bf-439e-812c-1604e4052465",
+        "11beef14-816b-4ced-bce3-90df6a92a889",
+        "2c84c6a5-a564-4775-8d7b-e7fa82a7a539",
+        "a7ff510c-6bbb-460f-aa31-37729a5967c2",
+        "4fd94496-ebc8-45a4-8a91-8b89a08358bc",
+        "d9504c2a-07c6-4b86-9330-01b587d2aecc",
+        "f6c1618d-5b69-43e5-ab4f-90c4f7d04f90",
+        "67eaece2-1899-48be-bddd-f74c7eee7bef",
+        "0eb2d6d3-090d-4666-93f0-939dc463e837",
+        "65475bc4-1627-4737-99a4-93ad65ce6305",
+        "8f08def3-3615-4f62-b650-e640238e085b",
+        "a65d99d9-b69b-4da6-bfaf-e8b6d04f05b8"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "alignment": "bottom-left",
+        "height": "natural"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1660733845fe2e443f",
+    "1661922588d566606a"
+  ]
+}

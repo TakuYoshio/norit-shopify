@@ -1,0 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "bg_color": "#f4f4f4",
+        "text_color": "#191919",
+        "width": "50%"
+      }
+    },
+    "ad9821f9-d983-4484-ac8c-133bd6be3a66": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16400585130124__ad9821f9-d983-4484-ac8c-133bd6be3a66-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Thanks"
+          }
+        },
+        "template--16400585130124__ad9821f9-d983-4484-ac8c-133bd6be3a66-text-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>会員登録完了しました。</p>"
+          }
+        },
+        "656dc675-ba45-429d-a9d1-67d5f18aec3a": {
+          "type": "button",
+          "settings": {
+            "link": "/",
+            "link_text": "トップページへ"
+          }
+        }
+      },
+      "block_order": [
+        "template--16400585130124__ad9821f9-d983-4484-ac8c-133bd6be3a66-heading-1",
+        "template--16400585130124__ad9821f9-d983-4484-ac8c-133bd6be3a66-text-1",
+        "656dc675-ba45-429d-a9d1-67d5f18aec3a"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ad9821f9-d983-4484-ac8c-133bd6be3a66"
+  ]
+}

@@ -1,0 +1,382 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "05d1ee07-71d8-41ee-8d62-b41dacfcc210": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "ABOUT  US",
+            "title": "",
+            "title_size": 40,
+            "subheading": "秋田の良質な素材を使用し、ペットのための安心・安全、そして美味しいごはんのブランド。",
+            "link": "shopify://pages/about",
+            "link_text": "VIEW MORE",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/mv1.jpg",
+            "image_mobile": "shopify://shop_images/mv1_sp.jpg",
+            "overlay_opacity": 10,
+            "focal_point": "center center"
+          }
+        },
+        "image_BwYdGj": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "腸内環境の改善に",
+            "title_size": 40,
+            "subheading": "秋田県オリジナル米麹「あめこうじ」を使用したあまざけ",
+            "link": "shopify://pages/lookbook",
+            "link_text": "VIEW MORE",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/mv2.jpg",
+            "image_mobile": "shopify://shop_images/mv2_sp.jpg",
+            "overlay_opacity": 10,
+            "focal_point": "center center"
+          }
+        },
+        "image_jjDYq9": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "無添加ジャーキー",
+            "title_size": 40,
+            "subheading": "秋田の一次食肉卸会社が作るこだわりのジャーキー",
+            "link": "",
+            "link_text": "VIEW MORE",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/mv3.jpg",
+            "image_mobile": "shopify://shop_images/mv3_sp.jpg",
+            "overlay_opacity": 10,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "05d1ee07-71d8-41ee-8d62-b41dacfcc210",
+        "image_BwYdGj",
+        "image_jjDYq9"
+      ],
+      "settings": {
+        "section_height": "750px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "dots",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "advanced_content_wdJeEc": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_XC4Wbp": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div class=\"navWrap\">\n\n    <h2>Category</h2>\n\n    <ul class=\"cats\">\n        <li class=\"cat\">\n            <h3>カテゴリで選ぶ</h3>\n            <ul class=\"lists\">\n                <li><a href=\"/collections/gohan\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-gohan.png\" alt=\"\">ごはん</a></li>\n                <li><a href=\"/collections/topping\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-topping.png\" alt=\"\">トッピング</a></li>\n                <li><a href=\"/collections/oyatsu\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-oyatsu.png\" alt=\"\">おやつ</a></li>\n                <li><a href=\"/collections/supply\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-supply.png\" alt=\"\">サプリメント</a></li>\n                <li><a href=\"/collections/drink\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-drink.png\" alt=\"\">飲み物</a></li>\n                <li><a href=\"/collections/frozen\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-frozen.png\" alt=\"\">冷凍品</a></li>\n                <li><a href=\"/collections/careitem\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-careitem.png\" alt=\"\">お手入れ用品</a></li>\n                <li><a href=\"/collections/gift\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-gift.png\" alt=\"\">ギフト</a></li>\n                <li><a href=\"/collections/cats\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-cats.png\" alt=\"\">猫用品</a></li>\n                <li><a href=\"/collections/owner\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-owner.png\" alt=\"\">オーナー向け</a></li>\n            </ul>\n        </li>\n        <li class=\"cat\">\n            <h3>犬種で選ぶ</h3>\n            <ul class=\"lists\">\n                <li><a href=\"/collections/toy-poodle\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-toy-poodle.png\" alt=\"\">トイプードル</a></li>\n                <li><a href=\"/collections/chihuahua\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-chihuahua.png\" alt=\"\">チワワ</a></li>\n                <li><a href=\"/collections/mini-dachshund\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-mini-dachshund.png\" alt=\"\">ミニチュアダックスフンド</a></li>\n                <li><a href=\"/collections/pomeranian\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-pomeranian.png\" alt=\"\">ポメラニアン</a></li>\n                <li><a href=\"/collections/mini-schnauzer\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-mini-schnauzer.png\" alt=\"\">ミニチュアシュナウザー</a></li>\n                <li><a href=\"/collections/french-bulldog\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-french-bulldog.png\" alt=\"\">フレンチブルドッグ</a></li>\n                <li><a href=\"/collections/maltese\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-maltese.png\" alt=\"\">マルチーズ</a></li>\n                <li><a href=\"/collections/yorkie\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-yorkie.png\" alt=\"\">ヨークシャテリア</a></li>\n                <li><a href=\"/collections/shih-tzu\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-shih-tzu.png\" alt=\"\">シーズー</a></li>\n                <li><a href=\"/collections/golden-retriever\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-golden-retriever.png\" alt=\"\">ゴールデンレトリーバー</a></li>\n            </ul>\n        </li>\n        <li class=\"cat\">\n            <h3>成長に合わせて<span class=\"pcOnly\">選ぶ</span></h3>\n            <ul class=\"lists\">\n                <li><a href=\"/collections/puppy\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-puppy.png\" alt=\"\">子犬期</a></li>\n                <li><a href=\"/collections/adult\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-adult.png\" alt=\"\">成犬期</a></li>\n                <li><a href=\"/collections/old\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-old.png\" alt=\"\">高齢期</a></li>\n            </ul>\n        </li>\n        <li class=\"cat\">\n            <h3>価格で選ぶ</h3>\n            <ul class=\"lists\">\n                <li><a href=\"/collections/500yen\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-500yen.png\" alt=\"\">〜500円</a></li>\n                <li><a href=\"/collections/501-1000yen\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-501-1000yen.png\" alt=\"\">501〜1,000円</a></li>\n                <li><a href=\"/collections/1001-2000yen\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-1001-2000yen.png\" alt=\"\">1,001〜2,000円</a></li>\n                <li><a href=\"/collections/2001-3000yen\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-2001-3000yen.png\" alt=\"\">2,001〜3,000円</a></li>\n                <li><a href=\"/collections/3001yen\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-3001yen.png\" alt=\"\">3,001円〜</a></li>\n            </ul>\n        </li>\n        <li class=\"cat\">\n            <h3>ブランドで選ぶ</h3>\n            <ul class=\"lists\">\n                <li><a href=\"/collections/komachi-na-brand\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-komachi-na-brand.png\" alt=\"\">komachi-na-</a></li>\n                <li><a href=\"/collections/komachi-nya-brand\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-komachi-nya-brand.png\" alt=\"\">komachi-nya-</a></li>\n                <li><a href=\"/collections/hakka-care-series\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-hakka-care-series.png\" alt=\"\">Hakka Care</a></li>\n                <li><a href=\"/collections/apple-care-series\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-apple-care-series.png\" alt=\"\">Apple Care</a></li>\n                <li><a href=\"/collections/artdeneco\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-artdeneco.png\" alt=\"\">アールデネコ</a></li>\n                <li><a href=\"/collections/predeli\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-predeli.png\" alt=\"\">プレデリ</a></li>\n                <li><a href=\"/collections/dish-detergent\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-dish-detergent.png\" alt=\"\">やさしい食器洗剤</a></li>\n                <li><a href=\"/collections/komachi-na-kimochi\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-komachi-na-kimochi.png\" alt=\"\">komachi-na-kimochi</a></li>\n            </ul>\n        </li>\n        <li class=\"cat\">\n            <h3>素材で選ぶ</h3>\n            <ul class=\"lists\">\n                <li><a href=\"/collections/rice\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-rice.png\" alt=\"\">お米</a></li>\n                <li><a href=\"/collections/vege\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-vege.png\" alt=\"\">野菜・穀物</a></li>\n                <li><a href=\"/collections/fruits\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-fruits.png\" alt=\"\">果物</a></li>\n                <li><a href=\"/collections/fish\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-fish.png\" alt=\"\">お魚</a></li>\n                <li><a href=\"/collections/meats\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-meats.png\" alt=\"\">お肉</a></li>\n                <li><a href=\"/collections/brand-material\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-brand-material.png\" alt=\"\">ブランド素材</a></li>\n                <li><a href=\"/collections/goat-milk\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-goat-milk.png\" alt=\"\">ヤギミルク</a></li>\n                <li><a href=\"/collections/other-material\"><img width=\"72\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/top_icon-other-material.png\" alt=\"\">その他素材</a></li>\n            </ul>\n        </li>\n\n        <li class=\"cat non\"></li>\n        <li class=\"cat non\"></li>\n    </ul>\n</div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_XC4Wbp"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "16595294888ee29419": {
+      "type": "featured-products",
+      "custom_css": [
+        ".index-section {margin: 0; /* padding: 55px 0 120px; */ padding: 55px 0 0;}",
+        ".section-header--with-link {display: block; text-align: center; margin-bottom: 74px;}",
+        ".btn--secondary {display: none;}",
+        "@media only screen and (max-width: 768px) {.index-section {padding: 30px 0 60px; } .section-header--with-link {margin-bottom: 30px; }}"
+      ],
+      "settings": {
+        "title": "New Items",
+        "home_featured_products": "new-items",
+        "per_row": 4,
+        "rows": 1,
+        "ranking": false,
+        "mobile_scrollable": false,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "advanced_content_hztDHp": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_AU4Bca": {
+          "type": "liquid",
+          "settings": {
+            "code": "<a href=\"/collections/new-items\" class=\"btn btn--secondary btn--small section-header__link\">VIEW ALL</a>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_AU4Bca"
+      ],
+      "custom_css": [
+        ".index-section {margin: 0; padding: 0 0 120px;}",
+        ".btn--secondary{display: table; margin: 50px auto 0;}",
+        "@media only screen and (max-width: 768px) {.index-section {padding: 0 0 100px; } .btn--secondary{margin: 0 auto; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": true
+      }
+    },
+    "featured_products_cAQF7m": {
+      "type": "featured-products",
+      "custom_css": [
+        ".index-section {margin: 0; padding: 105px 0 176px; background: #f2f2f2;}",
+        "@media only screen and (max-width: 768px) {.index-section {padding: 50px 0 88px; }}"
+      ],
+      "settings": {
+        "title": "Popular",
+        "home_featured_products": "popular",
+        "per_row": 2,
+        "rows": 3,
+        "ranking": false,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "16607321111e7216d6": {
+      "type": "featured-products",
+      "custom_css": [
+        ".index-section {margin: 0; padding: 105px 0 120px;}",
+        "@media only screen and (max-width: 768px) {.index-section {padding: 100px 0; }}"
+      ],
+      "settings": {
+        "title": "Ranking",
+        "home_featured_products": "ranking",
+        "per_row": 3,
+        "rows": 2,
+        "ranking": true,
+        "mobile_scrollable": false,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1661774631c3adf209": {
+      "type": "blog-lists",
+      "disabled": true,
+      "settings": {
+        "title": "RECENT NEWS",
+        "blog": "news",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "view_all": true,
+        "border": true,
+        "divider": false
+      }
+    },
+    "16594100910797758e": {
+      "type": "featured-products-list",
+      "blocks": {
+        "e058605c-45ef-4453-a6e1-c323fd0c2e24": {
+          "type": "collection",
+          "settings": {
+            "title": "OUTER",
+            "collection": "outer"
+          }
+        },
+        "b406e597-9e69-4e7a-b917-53e3adbf9f31": {
+          "type": "collection",
+          "settings": {
+            "title": "T-SHIRT",
+            "collection": "t-shirt"
+          }
+        },
+        "1f8b49fa-46de-4d7d-a9d7-e5fd5cceae2f": {
+          "type": "collection",
+          "settings": {
+            "title": "BAG",
+            "collection": "bag"
+          }
+        }
+      },
+      "block_order": [
+        "e058605c-45ef-4453-a6e1-c323fd0c2e24",
+        "b406e597-9e69-4e7a-b917-53e3adbf9f31",
+        "1f8b49fa-46de-4d7d-a9d7-e5fd5cceae2f"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_gutter": true,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "16576174252a599826": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "width": "50%",
+        "subtitle": "ABOUT TUNA",
+        "title": "DON'T FISH, BE CHOSEN",
+        "text": "<p>とかく複雑で常に変化が必要なファッション事情。これまでの課題に終止符を打つべく、スタイリストのノウハウを集結し詰め込んだこれからの時代に必要なアパレルブランド。</p>",
+        "button_label": "VIEW MORE",
+        "button_link": "shopify://pages/about",
+        "button_style": "primary",
+        "alignment": "middle-left",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "disabled": true,
+      "settings": {
+        "title": "JOURNAL",
+        "blog": "journal",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "blog_image_size": "landscape2",
+        "divider": false
+      }
+    },
+    "166071778536c566a4": {
+      "type": "advanced-content-grid",
+      "blocks": {
+        "d3d17e80-5adb-49a9-8b43-38c72ac12d14": {
+          "type": "collection-logo",
+          "settings": {
+            "link": "shopify://pages/lookbook",
+            "title": "LOOKBOOK",
+            "text": "2022 AW COLLECTION",
+            "width": "25%"
+          }
+        },
+        "a7af2697-413d-4a98-a9d4-e76a690bd3f6": {
+          "type": "collection-logo",
+          "settings": {
+            "link": "shopify://collections/outer",
+            "title": "OUTER",
+            "text": "ボリュームシルエットのMA-1",
+            "width": "25%"
+          }
+        },
+        "90c805ab-533b-4d9c-a97d-094e16eab7cf": {
+          "type": "collection-logo",
+          "settings": {
+            "link": "shopify://blogs/journal/jidatara-coffee",
+            "title": "",
+            "text": "TUNA meets COFFEE SHOP Vol.1 \"JIDATARA COFFEE\"",
+            "width": "25%"
+          }
+        },
+        "70152f89-ae80-4693-a929-52ea0522e7c5": {
+          "type": "collection-logo",
+          "settings": {
+            "link": "shopify://collections/cap",
+            "title": "CAP",
+            "text": "Simple is best",
+            "width": "25%"
+          }
+        },
+        "c132f551-ddf8-4b89-a31c-30147b450db0": {
+          "type": "collection-logo",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://collections/sweat",
+            "title": "HOODIE",
+            "text": "定番のパーカーコレクション",
+            "width": "33%"
+          }
+        },
+        "d2839f48-cf50-4b0a-a0dc-c03d89d30526": {
+          "type": "collection-logo",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://collections/iphone-case",
+            "title": "iPhone CASE",
+            "text": "ポップなデザインのiPhoneケース",
+            "width": "33%"
+          }
+        }
+      },
+      "block_order": [
+        "d3d17e80-5adb-49a9-8b43-38c72ac12d14",
+        "a7af2697-413d-4a98-a9d4-e76a690bd3f6",
+        "90c805ab-533b-4d9c-a97d-094e16eab7cf",
+        "70152f89-ae80-4693-a929-52ea0522e7c5",
+        "c132f551-ddf8-4b89-a31c-30147b450db0",
+        "d2839f48-cf50-4b0a-a0dc-c03d89d30526"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "alignment": "bottom-left",
+        "height": "66.6666%"
+      }
+    },
+    "text_and_image_cCfDXK": {
+      "type": "text-and-image",
+      "custom_css": [
+        ".index-section {margin: 0 0 60px; padding: 60px 0;}",
+        "@media only screen and (max-width: 768px) {.index-section {padding: 30px 0; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/top-about_image.png",
+        "width": "50%",
+        "subtitle": "about us",
+        "title": "秋田の良質な素材を使った、<br>ペットのための“美味しい”ごはん",
+        "text": "<p>大切なペットが健康で長生きできるよう、自然豊かな秋田県で育った素材を使用して、ただ良質で安全なだけでなく、美味しく食べられるごはんを作りました。</p>",
+        "button_label": "READ MORE",
+        "button_link": "shopify://pages/about",
+        "button_style": "secondary",
+        "alignment": "middle-left",
+        "layout": "right",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "advanced_content_wdJeEc",
+    "16595294888ee29419",
+    "advanced_content_hztDHp",
+    "featured_products_cAQF7m",
+    "16607321111e7216d6",
+    "1661774631c3adf209",
+    "16594100910797758e",
+    "16576174252a599826",
+    "blog-posts",
+    "166071778536c566a4",
+    "text_and_image_cCfDXK"
+  ]
+}

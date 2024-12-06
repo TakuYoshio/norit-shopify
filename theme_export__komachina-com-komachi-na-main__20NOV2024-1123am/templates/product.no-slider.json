@@ -1,0 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "truck",
+            "text": "送料全国一律 ¥1,000"
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "ebbffa62-13bd-49c9-a817-4b9fbf601f1a": {
+          "type": "size_chart",
+          "settings": {
+            "size_chart": "sizechart",
+            "disable_size_chart": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": true
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 8,
+            "inventory_transfers_enable": false
+          }
+        },
+        "98167ba6-63b7-4980-8f82-1915684d29db": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "商品概要",
+            "content": "<p>{{ product.metafields.custom.accordion1 | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "93b633bf-6a7e-45eb-bf07-67e9508ae98c": {
+          "type": "tab",
+          "settings": {
+            "title": "素材",
+            "content": "<p>{{ product.metafields.custom.accordion2 | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "b25b7a54-6e3b-40b4-88f3-fa847d07b453": {
+          "type": "tab",
+          "settings": {
+            "title": "取扱い方法",
+            "content": "<p>{{ product.metafields.custom.accordion3 | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "bcc852bb-e8ac-4641-8c43-c7ef38949101": {
+          "type": "tab",
+          "settings": {
+            "title": "注意事項",
+            "content": "<p>{{ product.metafields.custom.accordion4 | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "price",
+        "sales_point",
+        "separator",
+        "ebbffa62-13bd-49c9-a817-4b9fbf601f1a",
+        "variant_picker",
+        "inventory_status",
+        "98167ba6-63b7-4980-8f82-1915684d29db",
+        "buy_buttons",
+        "description",
+        "tab",
+        "93b633bf-6a7e-45eb-bf07-67e9508ae98c",
+        "b25b7a54-6e3b-40b4-88f3-fa847d07b453",
+        "bcc852bb-e8ac-4641-8c43-c7ef38949101",
+        "share"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "large",
+        "product_zoom_enable": true,
+        "product_slider_disable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "type_enable": true
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": false
+      }
+    },
+    "16614216577c7adb22": {
+      "type": "advanced-content",
+      "blocks": {
+        "166142165780c92e56-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% if product.metafields.accentuate.image != blank %}\n<div class=\"product-single-future\">\n\t<div class=\"page-width\">\n\t\t<div class=\"section-header\">\n\t\t\t<h2 class=\"section-header__title text-center\">おすすめのポイント</h2>\n\t\t</div>\n\t\t<div class=\"product-single-future__grid-wrap\">\n\t\t\t{% for n1 in product.metafields.accentuate.image %}\n\t\t\t<div class=\"feature-row\" data-aos>\n\t\t\t\t<div class=\"feature-row__item small--one-whole two-thirds\">\n\t\t\t\t\t<div class=\"feature-row__image-wrap\">\n\t\t\t\t\t\t{% for image in product.metafields.accentuate.image[forloop.index0] %}\n\t\t\t\t\t\t<div class=\"image-wrap\" style=\"height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;\">\n\t\t\t\t\t\t\t<img class=\"feature-row__image lazyload\" data-src=\"{{ image.src }}\" data-widths=\"[180, 360, 540, 720, 900, 1080]\" data-aspectratio=\"{{ image.aspect_ratio }}\" data-sizes=\"auto\" alt=\"{{ image.alt }}\"/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t{% endfor %}\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"feature-row__item feature-row__text small--one-whole one-third  align--middle-left \">\n\t\t\t\t\t<div class=\"feature-row__text-inner\">\n\t\t\t\t\t\t<h2 class=\"ff-serif\">{{ product.metafields.accentuate.title[forloop.index0] | newline_to_br }}</h2>\n\t\t\t\t\t\t<p>{{ product.metafields.accentuate.texts[forloop.index0] | newline_to_br }}</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t{% endfor %}\n\t\t</div>\n\t</div>\n</div>\n{% endif %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "2219692c-d8d2-4051-ab12-d3776e9425e0": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% if product.metafields.accentuate.col_image != blank %}\n<div class=\"spacer\"></div>\n<div class=\"product-single-future\">\n\t<div class=\"page-width\">\n\t\t<div class=\"section-header\">\n\t\t\t<h2 class=\"section-header__title text-center\">商品のこだわり</h2>\n\t\t</div>\n\t\t<div class=\"grid\">\n\t\t\t{% for n2 in product.metafields.accentuate.col_image %}\n\t\t\t<div class=\"grid__item medium-up--one-third\" data-aos>\n\t\t\t\t<div class=\"product-single-future__col-image\">\n\t\t\t\t\t{% for image in product.metafields.accentuate.col_image[forloop.index0] %}\n\t\t\t\t\t<div class=\"image-wrap\" style=\"height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;\">\n\t\t\t\t\t\t<img class=\"feature-row__image lazyload\" data-src=\"{{ image.src }}\" data-widths=\"[180, 360, 540, 720, 900, 1080]\" data-aspectratio=\"{{ image.aspect_ratio }}\" data-sizes=\"auto\" alt=\"{{ image.alt }}\"/>\n\t\t\t\t\t</div>\n\t\t\t\t\t{% endfor %}\n\t\t\t\t</div>\n\t\t\t\t<div class=\"product-single-future__col-texts\">\n\t\t\t\t\t<p style=\"margin-bottom:10px;\"><strong>{{ product.metafields.accentuate.col_title[forloop.index0] | newline_to_br }}</strong></p>\n\t\t\t\t\t<p>{{ product.metafields.accentuate.col_texts[forloop.index0] | newline_to_br }}</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t{% endfor %}\n\t\t</div>\n\t</div>\n</div>\n{% endif %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "166142165780c92e56-1",
+        "2219692c-d8d2-4051-ab12-d3776e9425e0"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "あなたにおすすめの商品",
+        "related_count": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "recent_count": 6
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "16614216577c7adb22",
+    "product-recommendations",
+    "recently-viewed",
+    "collection-return"
+  ]
+}

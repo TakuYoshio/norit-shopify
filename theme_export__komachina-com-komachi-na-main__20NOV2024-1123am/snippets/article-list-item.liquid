@@ -1,0 +1,25 @@
+{%- assign fixed_aspect_ratio = false -%}
+{% unless image_size == 'natural' %}
+  {%- assign fixed_aspect_ratio = true -%}
+{% endunless %}
+
+<div class="grid__item" data-aos="row-of-1">
+  <div class="article__list {% if section.settings.border %}article__list--border{% endif %}">
+    {%- if section.settings.blog_show_date or article.tags.size > 0 or articles.comments_count > 0 -%}
+      <div class="article__date">
+        {%- if section.settings.blog_show_date -%}
+          {{ article.published_at | time_tag: format: 'month_day_year' }}
+        {%- endif -%}
+        {%- if section.settings.blog_show_tags and article.tags.size > 0 -%}
+          {%- for tag in article.tags -%}
+            {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a> &middot;
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
+
+  </div>
+</div>

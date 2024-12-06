@@ -1,0 +1,245 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "truck",
+            "text": "常温品の合計5,000円以上で送料無料"
+          }
+        },
+        "stamped_product_reviews_ugc_star_rating_badge_GYcNgi": {
+          "type": "shopify://apps/stamped-reviews/blocks/star-rating-badge/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "use_metafields": false,
+            "sku_tagtype": "sku",
+            "is_featured_product": false,
+            "featured_product_handle": ""
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "ebbffa62-13bd-49c9-a817-4b9fbf601f1a": {
+          "type": "size_chart",
+          "settings": {
+            "size_chart": "sizechart",
+            "disable_size_chart": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": true
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 8,
+            "inventory_transfers_enable": false
+          }
+        },
+        "98167ba6-63b7-4980-8f82-1915684d29db": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "cart_wrapper_start_LWazit": {
+          "type": "cart-wrapper-start",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false
+          }
+        },
+        "cart_wrapper_end_cjcidF": {
+          "type": "cart-wrapper-end",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "tab_yAMcyp": {
+          "type": "tab",
+          "settings": {
+            "title": "成分の特徴/効果",
+            "content": "<p>{{ product.metafields.custom._seibun | metafield_tag }}</p>",
+            "page": "register-successfully"
+          }
+        },
+        "tab_cLG7Bp": {
+          "type": "tab",
+          "settings": {
+            "title": "こだわり素材",
+            "content": "<p>{{ product.metafields.custom._materials | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "tab_gVG7Ux": {
+          "type": "tab",
+          "settings": {
+            "title": "商品詳細",
+            "content": "<p>{{ product.metafields.custom._product_info | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "tab_r4yqgz": {
+          "type": "tab",
+          "settings": {
+            "title": "注意事項",
+            "content": "<p>{{ product.metafields.custom._caution | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "price",
+        "sales_point",
+        "stamped_product_reviews_ugc_star_rating_badge_GYcNgi",
+        "separator",
+        "ebbffa62-13bd-49c9-a817-4b9fbf601f1a",
+        "variant_picker",
+        "inventory_status",
+        "98167ba6-63b7-4980-8f82-1915684d29db",
+        "cart_wrapper_start_LWazit",
+        "buy_buttons",
+        "cart_wrapper_end_cjcidF",
+        "description",
+        "tab_yAMcyp",
+        "tab_cLG7Bp",
+        "tab_gVG7Ux",
+        "tab_r4yqgz",
+        "share"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "large",
+        "product_zoom_enable": true,
+        "product_slider_disable": false,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "type_enable": true
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": false
+      }
+    },
+    "advanced_content_pfxC3q": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_rXnKrF": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% if product.metafields.custom_fields.cf_advanced_content_large != blank %}\n<div class=\"product-single-future\">\n\t<div class=\"page-width\">\n\t\t<div class=\"section-header\">\n\t\t\t<h2 class=\"h3 section-header__title text-center\">おすすめのポイント</h2>\n\t\t</div>\n\t\t<div class=\"product-single-future__grid-wrap\">\n\t\t\t{% for n1 in product.metafields.custom_fields.cf_advanced_content_large %}\n\t\t\t<div class=\"feature-row\" data-aos>\n\t\t\t\t<div class=\"feature-row__item small--one-whole two-thirds\">\n\t\t\t\t\t<div class=\"feature-row__image-wrap\">\n\t\t\t\t\t\t{% render 'cf-image' with image: n1.image %}\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"feature-row__item feature-row__text small--one-whole one-third  align--middle-left \">\n\t\t\t\t\t<div class=\"feature-row__text-inner\">\n\t\t\t\t\t\t<h3>{{ n1.title | newline_to_br }}</h3>\n\t\t\t\t\t\t<p>{{ n1.text | newline_to_br }}</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t{% endfor %}\n\t\t</div>\n\t</div>\n</div>\n{% endif %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "liquid_QQqeXq": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% if product.metafields.custom_fields.cf_advanced_content_small != blank %}\n<div class=\"spacer\"></div>\n<div class=\"product-single-future\">\n\t<div class=\"page-width\">\n\t\t<div class=\"section-header\">\n\t\t\t<h2 class=\"h3 section-header__title text-center\">商品のこだわり</h2>\n\t\t</div>\n\t\t<div class=\"grid\">\n\t\t\t{% for n2 in product.metafields.custom_fields.cf_advanced_content_small %}\n\t\t\t<div class=\"grid__item medium-up--one-third\" data-aos>\n\t\t\t\t<div class=\"product-single-future__col-image\">\n\t\t\t\t\t{% render 'cf-image' with image: n2.image %}\n\t\t\t\t</div>\n\t\t\t\t<div class=\"product-single-future__col-texts\">\n\t\t\t\t\t<h4 style=\"margin-bottom:10px;\">{{ n2.title | newline_to_br }}</h4>\n\t\t\t\t\t<p>{{ n2.text | newline_to_br }}</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t{% endfor %}\n\t\t</div>\n\t</div>\n</div>\n{% endif %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_rXnKrF",
+        "liquid_QQqeXq"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "あなたにおすすめの商品",
+        "related_count": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "recent_count": 6
+      }
+    },
+    "1673599168d3202950": {
+      "type": "apps",
+      "blocks": {
+        "stamped_reviews_main_widget_dME3Wh": {
+          "type": "shopify://apps/stamped-reviews/blocks/main-widget/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": false,
+            "sku_tagtype": "sku"
+          }
+        }
+      },
+      "block_order": [
+        "stamped_reviews_main_widget_dME3Wh"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "advanced_content_pfxC3q",
+    "product-recommendations",
+    "recently-viewed",
+    "1673599168d3202950",
+    "collection-return"
+  ]
+}

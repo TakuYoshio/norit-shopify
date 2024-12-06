@@ -1,0 +1,26 @@
+{%- assign header_font = settings.type_header_font_family -%}
+{%- assign base_font = settings.type_base_font_family -%}
+{%- assign base_font_bold = settings.type_bold_font_family -%}
+
+
+{%- if settings.type_body_font_jp == 'notosans' -%}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@{{ settings.type_base_font_family.weight }};{{ settings.type_bold_font_family.weight }}&display=swap" rel="stylesheet">
+{%- endif -%}
+
+{%- if settings.type_body_font_jp == 'notoserif' -%}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@{{ settings.type_base_font_family.weight }};{{ settings.type_bold_font_family.weight }}&display=swap" rel="stylesheet">
+{%- endif -%}
+
+{%- if settings.type_header_font_jp == 'notosans' -%}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@{{ settings.type_header_font_family.weight }}&display=swap" rel="stylesheet">
+{%- endif -%}
+
+{%- if settings.type_header_font_jp == 'notoserif' -%}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@{{ settings.type_header_font_family.weight }}&display=swap" rel="stylesheet">
+{%- endif -%}
+
+{%- style -%}
+  {{ header_font | font_face: font_display: 'swap' }}
+  {{ base_font | font_face: font_display: 'swap' }}
+  {{ base_font_bold | font_face: font_display: 'swap' }}
+{%- endstyle -%}

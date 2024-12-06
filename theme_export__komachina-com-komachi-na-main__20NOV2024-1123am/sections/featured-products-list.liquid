@@ -1,0 +1,177 @@
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+{% assign product_limit = 4 %}
+{% assign isEmpty = true %}
+
+{% if section.blocks.size > 0 %}
+  {%- assign isEmpty = false -%}
+{% endif %}
+
+{% unless isEmpty %}
+{% for block in section.blocks %}
+  {% capture the_cycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+  {% assign collection = collections[block.settings.collection] %}
+  {% assign brand_name = collection.title | downcase | remove: ' | top' %}
+
+  <div
+  id="CollectionSection-{{ block.id }}"
+  data-section-id="{{ block.id }}"
+  data-section-type="collection-grid"
+  class="index-section">
+
+    {% if block.settings.title != blank %}
+    <div class="page-width">
+      <div class="section-header{% if section.settings.view_all %}{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}{% endif %}">
+        <h2 class="section-header__title {{ settings.headline_section }}">
+          {{ block.settings.title }}
+        </h2>
+        {% if section.settings.view_all %}
+          <a href="{{ collection.url }}" class="btn btn--secondary btn--small section-header__link">{{ 'collections.general.all_of_collection' | t }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="page-width {% if section.settings.mobile_scrollable %} page-width--flush-small{% endif %}">
+      <div class="grid {% if the_cycle == 'even' %} grid--reverse{% endif %}{% unless section.settings.enable_gutter %} grid--no-gutters{% endunless %}">
+
+        <div class="grid__item medium-up--three-fifths">
+          <a href="{{ collection.url }}" class="featured-cover">
+            <div class="page-width--small featured-linkWrap">
+              <div class="featured-cover__image">
+                <div class="media">
+                  <noscript class="media__noscript">
+                    <img src="{{ collection.image.src | img_url: '1000x' }}">
+                  </noscript>
+                  <div class="media__image">
+                    <img class="media__source" src="{{ collection.image.src | img_url: '1000x' }}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="grid__item medium-up--two-fifths">
+          <div {% if section.settings.mobile_scrollable %} class="grid-overflow-wrapper"{% endif %}><div class="grid">
+          
+            {% if collection.empty? or collection.products_count == 0 %}
+
+              <div class="grid__item">
+                <div class="grid grid--uniform">
+                  {%- for i in (1..product_limit) -%}
+                    <div class="grid__item one-half grid-product" data-aos>
+                      <div class="grid-product__content grid-product--{{ settings.product_grid_style }}">
+                        <a href="{{ product.url | within: collection }}" class="grid-product__link">
+                          <div class="grid-product__image-mask">
+                            <div class="grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }}">
+                              {%- capture current -%}{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                              <div class="image-wrap">{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                            </div>
+                          </div>
+                          <div class="grid-product__meta">
+                            <div class="grid-product__title">{{ 'home_page.onboarding.product_title' | t }}</div>
+                            <div class="grid-product__price">¥9,999</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  {%- endfor -%}
+                </div>
+              </div>
+
+            {% else %}
+
+              {% assign grid_item_width = 'one-half' %}
+              {% for product in collection.products limit: product_limit %}
+                {%- render 'product-grid-item',
+                  product: product,
+                  collection: collection,
+                  per_row: 2,
+                  quick_shop_enable: settings.quick_shop_enable
+                -%}
+              {% endfor %}
+
+              {%- if section.settings.view_all -%}
+
+                {%- if section.settings.mobile_scrollable -%}
+                  <div class="grid__item grid__item--view-all text-center {{ grid_item_width }} medium-up--hide">
+                    <a href="{{ collection.url }}" class="grid-product__see-all grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }}">
+                      <span>{{ 'collections.general.view_all_products_html' | t: count: collection.products_count }}</span>
+                    </a>
+                  </div>
+                {%- endif -%}
+
+              {%- endif -%}
+
+            {% endif %}
+
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+{% endunless %}
+
+{% if section.settings.divider %}</div>{% endif %}
+
+
+{% schema %}
+{
+  "name": "おすすめコレクションリスト",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_gutter",
+      "label": "Add spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_scrollable",
+      "label": "t:sections.featured-collection.settings.mobile_scrollable.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "view_all",
+      "label": "t:sections.featured-collection.settings.view_all.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.featured-collection.settings.divider.label",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Featured collection"
+        },
+        {
+          "id": "collection",
+          "label": "Collection",
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "おすすめコレクションリスト"
+    }
+  ]
+}
+{% endschema %}

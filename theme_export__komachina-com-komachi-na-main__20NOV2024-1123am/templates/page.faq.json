@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "bg_color": "#f4f4f4",
+        "text_color": "#191919",
+        "width": "50%"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq-0": {
+          "type": "rich-text",
+          "settings": {
+            "title": "会員登録や変更について",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "faq-1": {
+          "type": "question",
+          "settings": {
+            "title": "キャリアメール (携帯メール) の利用について",
+            "text": "<p>au・SoftBank・docomo・Y!mobileなどのキャリアメール（携帯メール）は、迷惑メールフィルタの設定にかかわらず、正しくお手元にメールが届かないことが多々発生しております。<br/><br/>アカウント登録にはGmailやiCloudなどのメールアドレスでのご登録を推奨しております。</p>"
+          }
+        },
+        "faq-2": {
+          "type": "question",
+          "settings": {
+            "title": "会員登録後、住所の登録、変更は可能ですか？",
+            "text": "<p>マイページまたはご購入手続の画面にて登録・編集ができます。<br/><br/>マイページにつきましては<br/><br/>PC［マイページの右側］、スマートフォン［マイページの下部］にお客様ご住所という欄がございます。<br/>その「お届け先の管理」をクリックして、「新しい住所を追加する」より住所の追加、また「編集」にて入力内容の編集ができます。</p>"
+          }
+        },
+        "6b8a5496-d97f-48b7-887c-1a231e47a8e1": {
+          "type": "question",
+          "settings": {
+            "title": "退会 (登録削除)について教えてください。",
+            "text": "<p>こちらで退会(削除)処理をさせていただきますので、会員登録情報を確認の上、お名前・ご登録住所・電話番号・ご登録メールアドレスを明記の上、退会依頼をお問い合わせからご連絡ください。</p>"
+          }
+        },
+        "faq-3": {
+          "type": "rich-text",
+          "settings": {
+            "title": "ログインについて",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "faq-4": {
+          "type": "question",
+          "settings": {
+            "title": "登録のメールアドレスがわからない場合",
+            "text": "<p>ご登録メールアドレスを忘れた方は、お客様に事務局からご登録されているメールアドレスを開示しないため、新たに会員登録していただきますようお願いいたします。</p>"
+          }
+        },
+        "d07a0c24-3e4d-4528-9502-ca797cc33a6a": {
+          "type": "question",
+          "settings": {
+            "title": "パスワードがわからない場合",
+            "text": "<p>ログイン画面の「パスワードをお忘れですか」よりパスワードの再発行を行ってください。</p>"
+          }
+        },
+        "2892829a-6f4a-4f07-9732-5fe11fc3812b": {
+          "type": "rich-text",
+          "settings": {
+            "title": "注文について",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "aba9e629-e390-425b-84a3-111936e0b672": {
+          "type": "question",
+          "settings": {
+            "title": "会員登録をしなくても購入可能ですか？",
+            "text": "<p>当サイトは、会員登録をしてからの購入対応しかしておりません。</p>"
+          }
+        },
+        "4fd78538-99a4-4a8d-89ab-ccd09c8eecb3": {
+          "type": "question",
+          "settings": {
+            "title": "キャンセルできますか？",
+            "text": "<p>ご注文内容が確定いたしますと、お客様のご都合によるキャンセルや商品、お支払い方法、お届け日、お届け先の変更は原則としてお受けしておりません。<br/>内容に誤りがないよう、注文完了前にご注文内容確認画面でご確認いただきますようお願いいたします。</p>"
+          }
+        },
+        "7b5e1661-d9aa-44c7-8125-9521244cea97": {
+          "type": "question",
+          "settings": {
+            "title": "注文完了メールが届きません。注文できていますか？",
+            "text": "<p>ご注文後すぐに自動配信にてお届けしておりますが、お使いのメールや環境によっては自動的に迷惑メールに振り分けられていることがございますのでご確認ください。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-0",
+        "faq-1",
+        "faq-2",
+        "6b8a5496-d97f-48b7-887c-1a231e47a8e1",
+        "faq-3",
+        "faq-4",
+        "d07a0c24-3e4d-4528-9502-ca797cc33a6a",
+        "2892829a-6f4a-4f07-9732-5fe11fc3812b",
+        "aba9e629-e390-425b-84a3-111936e0b672",
+        "4fd78538-99a4-4a8d-89ab-ccd09c8eecb3",
+        "7b5e1661-d9aa-44c7-8125-9521244cea97"
+      ],
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

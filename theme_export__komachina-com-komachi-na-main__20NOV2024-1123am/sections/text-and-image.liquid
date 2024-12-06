@@ -1,0 +1,213 @@
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="index-section">
+
+  <div class="page-width">
+    <div class="feature-row feature-row--{{ section.id }} {%- if section.settings.layout == 'right' %} feature-row--reverse{% endif %}" data-aos>
+
+      {%- liquid
+        case section.settings.width
+          when '25%'
+            assign image_width = 'small--one-half one-quarter'
+            assign text_width = 'small--one-half three-quarters'
+          when '33%'
+            assign image_width = 'small--one-half one-third'
+            assign text_width = 'small--one-half two-thirds'
+          when '50%'
+            assign image_width = 'small--one-whole one-half'
+            assign text_width = 'small--one-whole one-half'
+          when '66%'
+            assign image_width = 'small--one-whole two-thirds'
+            assign text_width = 'small--one-whole one-third'
+          when '75%'
+            assign image_width = 'small--one-whole three-quarters'
+            assign text_width = 'small--one-whole one-quarter'
+          when '100%'
+            assign image_width = 'one-whole'
+            assign text_width = 'one-whole'
+        endcase
+      -%}
+      <div class="feature-row__item {{ image_width }} " data-aos>
+          {%- if section.settings.image != blank -%}
+            <div>
+              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}<a href="{{ section.settings.button_link }}">{%- endif -%}
+                <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+                  {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img class="feature-row__image lazyload"
+                    data-src="{{ img_url }}"
+                    data-widths="[180, 360, 540, 750, 900, 1080]"
+                    data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                    data-sizes="auto"
+                    alt="{{ section.settings.image.alt }}">
+                </div>
+              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}</a>{%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.image == blank -%}
+            <div>
+              <div class="image-wrap">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+          {%- endif -%}
+      </div>
+
+      <div class="feature-row__item {{ text_width }} feature-row__text feature-row__text--{{ section.settings.layout }} align--{{ section.settings.alignment }}" data-aos>
+        {%- if section.settings.subtitle != blank -%}
+          <div class="subheading appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.subtitle }}</div>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <div class="h2 appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.title }}</div>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="rte appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <div class="appear-delay{% cycle '','-1','-2','-3','-4' %}">
+            <a href="{{ section.settings.button_link }}" class="btn{% if section.settings.button_style == 'secondary' %} btn--secondary{% endif %}">
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.text-and-image.name",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.text-and-image.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Image width",
+      "default": "50%",
+      "options": [
+        {
+          "value": "25%",
+          "label": "25%"
+        },
+        {
+          "value": "33%",
+          "label": "33%"
+        },
+        {
+          "value": "50%",
+          "label": "50%"
+        },
+        {
+          "value": "66%",
+          "label": "66%"
+        },
+        {
+          "value": "75%",
+          "label": "75%"
+        },
+        {
+          "value": "100%",
+          "label": "100%"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:sections.text-and-image.settings.subtitle.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.text-and-image.settings.title.label",
+      "default": "Image with text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.text-and-image.settings.text.label",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:sections.text-and-image.settings.button_label.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.text-and-image.settings.button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "t:sections.text-and-image.settings.button_style.label",
+      "default": "primary",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.text-and-image.settings.button_style.options.primary.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.text-and-image.settings.button_style.options.secondary.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "テキスト配置",
+      "default": "middle-left",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top"
+        },
+        {
+          "value": "middle-left",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.text-and-image.settings.layout.label",
+      "default": "right",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.text-and-image.settings.layout.options.left.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.text-and-image.settings.layout.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.text-and-image.settings.divider.label",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.text-and-image.presets.image_with_text.name"
+    }
+  ]
+}
+{% endschema %}

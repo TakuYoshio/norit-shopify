@@ -1,0 +1,55 @@
+<div class="site-nav">
+  <div class="site-nav__icons">
+    
+
+    {%- if settings.show_wishlist and isModal != true -%}
+    {%- comment -%}Swym Wishlist Plus{%- endcomment -%}
+      <a href="/tools/prime-review/favorites.html" class="swym-wishlist site-nav__link site-nav__link--icon">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-heart" viewBox="0 0 64 64"><path d="M50.3 16.4c-2.3-2.3-5.3-3.5-8.5-3.5s-6.3 1.3-8.5 3.5L32 17.6l-1.2-1.2c-2.3-2.3-5.3-3.6-8.6-3.6-3.2 0-6.2 1.3-8.5 3.5-2.3 2.3-3.5 5.3-3.5 8.5s1.3 6.2 3.6 8.5l17.4 17.4c.2.2.6.4.9.4.3 0 .6-.1.9-.4l17.4-17.3c2.3-2.3 3.5-5.3 3.5-8.5-.1-3.2-1.3-6.2-3.6-8.5z"/></svg>
+      </a>
+    {%- comment -%}Swym Wishlist Plus END{%- endcomment -%}
+    {% endif %}
+    
+    {%- if settings.search_enable -%}
+      {%- unless section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-drawer' -%}
+        <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header {% if section.settings.main_menu_alignment_mobile == 'mobile-center' %} medium-down--hide{% endif %}">
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+          <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+        </a>
+      {%- endunless -%}
+    {%- endif -%}
+  
+    {%- if shop.customer_accounts_enabled -%}
+      <a class="site-nav__link site-nav__link--icon{% unless section.settings.icon_mobile %} medium-down--hide{% endunless %}" href="{{ routes.account_url }}">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 64 64"><path d="M44.7,22.8c0,6.8-5.5,12.4-12.4,12.4S20,29.7,20,22.8s5.5-12.4,12.4-12.4S44.7,16,44.7,22.8z M52.3,53.8L52.3,53.8c0-10.3-8.3-18.6-18.6-18.6h-3.4c-10.3,0-18.6,8.3-18.6,18.6v0"/></svg>
+        <span class="icon__fallback-text">
+          {%- if customer -%}
+            {{ 'layout.customer.account' | t }}
+          {%- else -%}
+            {{ 'layout.customer.log_in' | t }}
+          {%- endif -%}
+        </span>
+      </a>
+    {%- endif -%}
+
+    <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+      <span class="cart-link">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path fill="none" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
+        <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
+      </span>
+    </a>
+
+    {%- if section.settings.main_menu_alignment_mobile == 'mobile-left' -%}
+      <button
+        type="button"
+        class="site-nav__link site-nav__link--icon js-drawer-open-nav large-up--hide"
+        aria-controls="NavDrawer">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path d="M7 15h51M7 32h43M7 49h51"/></svg>
+        <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+      </button>
+    {%- endif -%}
+
+  </div>
+</div>
+

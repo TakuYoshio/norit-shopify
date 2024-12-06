@@ -1,0 +1,103 @@
+.mxpr-like{
+  background-color: #ddd;
+}
+
+.mxpr-like-container{
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+}
+
+.mxpr-like-content{
+  display: flex;
+  align-items: center;
+  height: 2.0em;
+}
+
+.mxpr-like-left{
+  width: 1.0em;
+  height: 2.0em;
+  border-radius:2.0em 0 0 2.0em;
+}
+
+.mxpr-like-right{
+  width: 1.0em;
+  height: 2.0em;
+  border-radius:0 1.0em 1.0em 0;
+}
+
+.mxpr-like-heart{
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+
+.mxpr-like-heart svg{
+  margin: 0.25em;
+  fill: transparent;
+  stroke: #999;
+  stroke-width: 2px;
+}
+
+.mxpr-like-heart-active svg{
+  fill: #DA3E4F;
+  stroke: #DA3E4F;
+}
+
+.mxpr-like-text{
+  color: #777;
+  font-size: 1.0em;
+  padding-left: 3px;
+}
+
+.mxpr-like-count{
+  font-size: 1.0em;
+  margin-left: 5px;
+  color: #777;
+}
+
+#mxpr-like-count-link{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mxpr-like-spinner {
+  width: 1.5em;
+  height: 1.5em;
+  position: relative;
+}
+
+.mxpr-like-double-bounce1, .mxpr-like-double-bounce2 {
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #666;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.mxpr-like-double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

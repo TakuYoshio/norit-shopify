@@ -1,0 +1,125 @@
+{%- style -%}
+  .grid--{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+  }
+  .page-header__text {
+    padding:25px 20px
+  }
+  @media only screen and (min-width:769px){
+    .page-header__text {
+      padding:25px 40px
+    }
+  }
+  .p1 .s1 { display:inline-block }
+{%- endstyle -%}
+
+<div class="page-width page-width--flush-small">
+  <div class="grid grid--no-gutters grid--align-center grid--{{ section.id }}" data-aos>
+    {%- if section.settings.image != blank -%}
+      {%- liquid
+        case section.settings.width
+          when '25%'
+            assign image_width = 'small--one-half one-quarter'
+            assign text_width = 'small--one-half three-quarters'
+          when '33%'
+            assign image_width = 'small--one-half one-third'
+            assign text_width = 'small--one-half two-thirds'
+          when '50%'
+            assign image_width = 'small--one-whole one-half'
+            assign text_width = 'small--one-whole one-half'
+          when '66%'
+            assign image_width = 'small--one-whole two-thirds'
+            assign text_width = 'small--one-whole one-third'
+          when '75%'
+            assign image_width = 'small--one-whole three-quarters'
+            assign text_width = 'small--one-whole one-quarter'
+          when '100%'
+            assign image_width = 'one-whole'
+            assign text_width = 'one-whole'
+        endcase
+      -%}
+      <div class="grid__item {{image_width}}">
+        <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="feature-row__image lazyload"
+            data-src="{{ img_url }}"
+            data-widths="[180, 360, 540, 750, 900, 1080]"
+            data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ section.settings.image.alt }}">
+        </div>
+      </div>
+      <div class="grid__item {{text_width}}">
+      {%- else -%}
+      <div class="grid__item">
+      {%- endif -%}
+
+          {%- render 'breadcrumbs' -%}
+          <header class="page-header__text">
+            <div class="">
+              <h1 class="page-header__title h4">{{ page.title }}</h1>
+              {{ page.content }}
+            </div>
+          </header>
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景色",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "文字色",
+      "default": "#191919"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.text-and-image.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Image width",
+      "default": "50%",
+      "options": [
+        {
+          "value": "25%",
+          "label": "25%"
+        },
+        {
+          "value": "33%",
+          "label": "33%"
+        },
+        {
+          "value": "50%",
+          "label": "50%"
+        },
+        {
+          "value": "66%",
+          "label": "66%"
+        },
+        {
+          "value": "75%",
+          "label": "75%"
+        },
+        {
+          "value": "100%",
+          "label": "100%"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

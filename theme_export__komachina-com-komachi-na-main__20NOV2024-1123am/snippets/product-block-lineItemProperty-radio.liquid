@@ -1,0 +1,24 @@
+{% unless block.settings.value == blank %}
+  <div class="variant-wrapper js" data-type="button">
+    <label class="variant__label" for="ProductRadio-{{block.id}}-{{ product.id }}-option">{{ block.settings.optionTitle }}</label>
+    <fieldset class="variant-input-wrap"
+      id="ProductRadio-{{block.id}}-{{ product.id }}-option">
+      {% assign CommaSeparatedValues = block.settings.value | replace: "、","," | split: ',' %}
+      {% for value in CommaSeparatedValues %}
+        <div
+          class="variant-input">
+          <input type="radio"
+            form="{{ form_id }}"
+            name="properties[{{ block.settings.optionTitle }}]"
+            {% if forloop.index == 1 %} checked="checked"{% endif %}
+            value="{{ value | escape }}"
+            class=""
+            id="ProductRadio-{{ section_id }}-{{ product.id }}-option-{{ value | url_encode }}">
+            <label
+              for="ProductRadio-{{ section_id }}-{{ product.id }}-option-{{ value | url_encode }}"
+              class="variant__button-label always_enabled">{{ value | escape }}</label>
+        </div>
+      {%- endfor -%}
+    </fieldset>
+  </div>
+{% endunless %}

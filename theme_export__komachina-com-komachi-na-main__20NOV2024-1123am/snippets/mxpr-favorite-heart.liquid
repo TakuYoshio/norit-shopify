@@ -1,0 +1,80 @@
+
+{% style %}
+  /* お気に入りに追加するボタン削除 */
+  .mxpr-favorites-button.btn--heart {
+    display: none;
+  }
+  /* お気に入りボタンheartのスタイル */
+{% endstyle %}
+
+{% assign exitst = false %}
+
+{% for _variant in customer.metafields.prime_review.favorite_product_variants.variants %}
+  {% if _variant.handle == product.handle %}
+    {% assign exist = true %}
+  {% endif %}
+{% endfor %}
+
+{% assign favorites_count = product.metafields.prime_review.favorites.total | plus: 0 %}
+{% if favorites_count == 0 and exist %}
+  {% assign favorites_count = 1 %}
+{% endif %}
+
+<div class="mxpr-like-container">
+  <div class="mxpr-like mxpr-like-content">
+    <div
+      class="mxpr-like mxpr-like-heart {% if exist %}mxpr-like-heart-active{% endif %}"
+      data-active="{% if exist %}true{% else %}false{% endif %}"
+      data-count="{{ favorites_count }}"
+      data-customer-id="{{ customer.id }}"
+      data-handle="{{ product.handle }}"
+      data-default-variant-id="{{ product.variants[0].id }}"
+      data-alert="{% if forbidden_alert.size > 0 %}{{ forbidden_alert }}{% else %}{{ 'sections.favorites.alert' | t }}{% endif %}"
+      data-sending="{{ 'sections.favorites.sending' | t }}"
+      data-allow-guest="{{ shop.metafields.PrimeReview.globalSettings.favoriteAllowGuest }}"
+      data-forbidden-alert="{{ forbidden_alert }}"
+    >
+      <svg
+        width="26px"
+        height="25px"
+        version="1.1"
+        id="mxpr-like-heart-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 25 25"
+        style="enable-background:new 0 0 25 25;"
+        xml:space="preserve"
+      >
+        <path id="fill" d="M18.4599991,1.05
+          c-2.2900009,0-4.6300001,1.0899999-5.96,3.3700001C11.1599989,2.1200001,8.829999,1.04,6.539999,1.04
+          C3.23,1.04,0,3.3199999,0,7.4899998c0,4.8600006,5.8000002,9.8199997,12.5,16.4699993
+          C19.2000008,17.3099995,25,12.3499994,25,7.4899998c0-4.1799998-3.2199993-6.4400001-6.5400009-6.4400001"/>
+        <path id="stroke" d="M12.5,22.4899998
+          c-5.8600001-5.7700005-11.46-10.7199993-11.46-15C1.04,3.54,4.2399998,2.0799999,6.54,2.0799999
+          c1.3699999,0,4.3200006,0.52,5.96,4.6399999c1.6599998-4.1300001,4.6499996-4.6300001,5.9599991-4.6300001
+          c2.6499996,0,5.4899998,1.6900001,5.4899998,5.4000001c0,4.2399998-5.3500004,8.9799995-11.46,15 M18.4599991,1.05
+          c-2.2900009,0-4.6300001,1.0899999-5.96,3.3700001C11.1599989,2.1200001,8.829999,1.04,6.539999,1.04
+          C3.23,1.04,0,3.3199999,0,7.4899998c0,4.8600006,5.8000002,9.8199997,12.5,16.4699993
+          C19.2000008,17.3099995,25,12.3499994,25,7.4899998c0-4.1799998-3.2199993-6.4400001-6.5400009-6.4400001"/>
+      </svg>
+      <div id="mxpr-like-loading-icon" style="display: none;" class="mxpr-like-spinner">
+        <div class="mxpr-like-double-bounce1"></div>
+        <div class="mxpr-like-double-bounce2"></div>
+      </div>
+    </div>
+  </div>
+  <a
+    style="display: none;"
+    class="mxpr-like-count"
+    id="mxpr-like-count-link"
+    href="/tools/prime-review/favorites.html"
+  ></a>
+</div>
+
+{% comment %}theme-check-disable ParserBlockingScriptTag{% endcomment %}
+<script type="text/javascript">
+  window.mxProductInfo = {{ product | json }};
+</script>
+{% comment %}theme-check-enable ParserBlockingScriptTag{% endcomment %}

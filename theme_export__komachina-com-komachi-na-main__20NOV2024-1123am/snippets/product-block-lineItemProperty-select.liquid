@@ -1,0 +1,35 @@
+{% unless block.settings.value == blank %}
+  <div class="variant-wrapper variant-wrapper--dropdown js">
+    <label class="variant__label" for="ProductSelect-{{block.id}}-{{ product.id }}-option">{{ block.settings.optionTitle }}</label>
+    <div class="variant-input-wrap">
+      <select  
+        id="ProductSelect-{{block.id}}-{{ product.id }}-option"
+        >
+        {% assign CommaSeparatedValues = block.settings.value | replace: "、","," |split: ',' %}
+        {% for value in CommaSeparatedValues %}
+          <option value="{{ value | escape }}">{{ value | escape }}</option>
+        {%endfor %}
+      </select>
+      <input 
+        type="hidden"
+        name="properties[{{ block.settings.optionTitle }}]"
+        id="ProductSelect-{{block.id}}-{{ product.id }}-option-input"
+        form={{ form_id }}
+        value=""
+        >
+    </div>
+    <script>
+      (function(){
+        
+      const select = document.getElementById("ProductSelect-{{block.id}}-{{ product.id }}-option")
+      const input = document.getElementById("ProductSelect-{{block.id}}-{{ product.id }}-option-input")
+        input.value = select.value
+        select.addEventListener(
+        "change",(evt)=>{
+          input.value = select.value
+        }
+      )
+      })();
+    </script>
+  </div>
+{% endunless %}

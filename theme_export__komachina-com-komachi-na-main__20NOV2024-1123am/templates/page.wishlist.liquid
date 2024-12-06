@@ -1,0 +1,125 @@
+{%- liquid
+  assign grid_no_gap = false
+  if settings.product_grid_type == 'nogap'
+    assign grid_no_gap = true
+  endif
+-%}
+
+<div class="page-width page-wishlist page-content">
+  <div class="section-header">
+      <h1 class="section-header__title">{{ page.title | upcase }}</h1>
+  </div>
+  {{ page.content }}
+  <div class="product-grid">
+    <div class="product-grid__content">
+      <div class="grid grid--uniform grid-product--overlay {% if grid_no_gap %}grid--no-gutters{% endif %} grid--collection" id="wishlist-container"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+window.onload =function(){
+  function renderWishlist(products){
+//    et: 4       // Eventtype for wishlist,
+//    dt:         // product title
+//    du:         // product full url
+//    epi:        // variant id
+//    empi:       // product id
+//    pr:         // price
+//    iu:         // image url
+//    _id:        // id
+   // render products - array of objects with same structure as productData
+    document.getElementById('wishlist-container').innerHTML= (products.length==0) ? '<div class="grid__item"><p>お気に入りに登録されてる商品がありません</p></div>' : '';
+  while (products.length>0 ){
+    currentproduct = products.shift();
+    productObject=''
+    productObject+='<div class="grid-product__content" id="' + currentproduct["epi"] + '" data-uri="'+ currentproduct["du"] +'" data-epi="' + currentproduct["epi"] + '" data-idx="0" data-empi="'+currentproduct["empi"]+'"data-iu="'+ currentproduct["iu"] +'"data-pr="'+ currentproduct["pr"] +'">'
+    productObject+='    <a href="'+ currentproduct["du"] +'"  class="grid-product__link">'
+    productObject+='        <div class="grid-product__image-mask">'
+    productObject+='            <div class="image-wrap">'
+    productObject+='                <img class="grid-product__image lazyautosizes lazyloaded" src="'+ currentproduct["iu"] +'" alt="'+ currentproduct["dt"] +'">'
+    productObject+='            </div>'
+    productObject+='        </div>'
+    productObject+='        <div class="grid-product__meta">'
+    productObject+='            <div class="grid-product__title grid-product__title--body">'+ currentproduct["dt"] + '</div>'
+    productObject+='            <div class="grid-product__price">¥'+ currentproduct["pr"] + '</div>'
+    productObject+='        </div>'
+//    productObject+='        <div class="swym-loader product-form__cart-submit">'
+//    productObject+='            <a href="#" class="add-to-cart" style="text-align: center;display: block;color: #fff;padding-top: 14px;" data-product-id="' + currentproduct["empi"] + '" data-url="' + currentproduct["du"] + '" data-variant-id="' + currentproduct["epi"] + '">カートに入れる</a>'
+//    productObject+='        </div>'
+    productObject+='    </a>'
+    productObject+='    <a href="#" class="grid-product__remove-from-wishlist remove-from-wishlist" data-product-id="' + currentproduct["epi"] + '">'
+    productObject+='         お気に入り解除'
+    productObject+='    </a>'
+    productObject+='</div>'
+    
+  e = document.createElement("div");
+  e.className = 'grid__item grid-product--nogap small--one-half medium-up--one-quarter aos-animate';
+  e.innerHTML=productObject;
+    document.getElementById('wishlist-container').appendChild(e);
+    }
+  attachClickListeners();
+  };
+if(!window.SwymCallbacks){window.SwymCallbacks = [];}
+window.SwymCallbacks.push(function(){
+  _swat.fetch(
+    function(products){
+    console.log(products);
+      renderWishlist(products);
+    }
+  );
+});
+
+function onRemoveItemClick(e){
+  e.preventDefault();
+  tgt = document.getElementById(e.target.getAttribute("data-product-id"))
+  let deleteProduct = {};
+  deleteProduct["epi"] = tgt.getAttribute("data-epi");
+  deleteProduct["du"] = tgt.getAttribute("data-uri");
+  deleteProduct["empi"] = tgt.getAttribute("data-empi");
+  deleteProduct["iu"] = tgt.getAttribute("data-iu");
+  deleteProduct["pr"] = tgt.getAttribute("data-pr");
+  _swat.removeFromWishList(deleteProduct, 
+    function(r){
+    console.log('Product removed');
+    _swat.fetch(function(products){renderWishlist(products);})
+  }
+  );
+}
+function onAddToCartClick(e){
+  e.preventDefault();
+  var productId = e.target.getAttribute("data-product-id");
+  var variantId = e.target.getAttribute("data-variant-id");
+  var du = e.target.getAttribute("data-url");
+  console.log(productId,variantId,du)
+  window._swat.replayAddToCart(
+   {empi: productId, du: du},
+   variantId,
+   function() {
+     e.target.innerHTML = "カートに入れました";
+   e.target.classList.add("added-to-cart");
+   },
+   function() {
+     e.target.innerHTML = "カートへに入れられません。<br>詳細ページをご確認ください";
+   e.target.classList.add("failed-add-to-cart");
+   e.target.style.paddingBottom = "14px";
+   }
+  );
+}
+
+function attachClickListeners(){
+  var removeFromListButtons = document.getElementsByClassName("remove-from-wishlist");
+
+  for (var i = 0; i < removeFromListButtons.length; i++) {
+    removeFromListButtons[i].addEventListener('click', onRemoveItemClick, false);
+  }
+  
+  var addToCartButtons = document.getElementsByClassName("add-to-cart");
+
+  for (var i = 0; i < addToCartButtons.length; i++) {
+    addToCartButtons[i].addEventListener('click', onAddToCartClick, false);
+  }
+}
+}
+
+</script>

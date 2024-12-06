@@ -1,0 +1,66 @@
+{%- paginate customer.orders by 20 -%}
+
+<div class="page-width page-width--narrow page-content">
+  <header class="section-header">
+    <h1 class="h2 section-header__title">{{ 'customer.account.title' | t }}</h1>
+  </header>
+
+  <div class="account__page">
+
+    <div class="account__page-col">
+      {%- render 'account-menu' -%}
+    </div>
+
+    <div class="account__page-col">
+      <h1 class="h4">{{ 'customer.orders.title' | t }}</h1>
+
+      {%- if customer.orders.size != 0 -%}
+
+        <table class="table--responsive table--small-text">
+          <thead>
+            <tr>
+              <th>{{ 'customer.orders.order_number' | t }}</th>
+              <th>{{ 'customer.orders.date' | t }}</th>
+              <th>{{ 'customer.orders.payment_status' | t }}</th>
+              <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+              <th>{{ 'customer.orders.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for order in customer.orders -%}
+              <tr class="table__section">
+                <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | time_tag: format: 'date' }}</td>
+                <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+        <hr class="hr--clear">
+
+      {%- else -%}
+
+        <p>{{ 'customer.orders.none' | t }}</p>
+
+      {%- endif -%}
+
+      <hr class="hr--large">
+
+      <div class="hide">
+        <h3 class="h4">{{ customer.name }}さんの{{ 'customer.account.details' | t }}</h3>
+        {{ customer.default_address | format_address }}
+      </div>
+
+      <p><a href="{{ routes.account_addresses_url }}" class="text-link">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+    </div>
+
+  </div>
+
+  {%- if paginate.pages > 1 -%}
+    {%- render 'pagination', paginate: paginate -%}
+  {%- endif -%}
+</div>
+{%- endpaginate -%}

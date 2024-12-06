@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "33cfb4ce-3696-442f-a3ae-7cf62699d3db": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "ABOUT KOMACHI-NA-",
+        "title": "komachi-na-とは",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/mv1.jpg",
+        "focal_point": "center",
+        "layout": "center",
+        "height": 450,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "advanced_content_yWEeMF": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_4C4Nj6": {
+          "type": "liquid",
+          "settings": {
+            "code": "<main id=\"aboutPage\" class=\"add2410\">\n    <section id=\"intro\">\n\n        <div class=\"mv\">\n            <img class=\"pcOnly\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/add2410_about_mv-pc.jpg\" alt=\"komachi-na-とは\">\n            <img class=\"spOnly\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/add2410_about_mv-sp.jpg\" alt=\"komachi-na-とは\">\n        </div>\n\n        <div class=\"wrap\">\n\n            <div class=\"left\">\n                <h2>\n                    人が食べても美味しい！と思う\n                    <br>ドックフードを\n                </h2>\n                <p class=\"intro\">\n                    これまでのドックフードは見た目や素材から\n                    <br>人が食べても美味しいと感じるものは\n                    <br>少なかったのではないでしょうか。\n                    <br>komachi-na- は素材のもつ美味しさのみで\n                    <br>ドックフードを開発しております。\n                </p>\n                <p class=\"text\">\n                    飼い主と愛犬が共に「美味しいね」と\n                    <br>共感できるフードを提供します。\n                </p>\n            </div>\n            <div class=\"right\">\n                <img class=\"eating\" width=\"278\" src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/add2410_eating.png\" alt=\"食事する人\">\n            </div>\n\n        </div>\n    </section>\n\n    <section id=\"seisan\" class=\"gray\">\n        <div class=\"wrap\">\n            <h2>\n                komachi-na- は生産者の顔が見えるドックフード。<br class=\"pcOnly\">だから人もペットも安心。\n            </h2>\n            <div class=\"flex\">\n                <div class=\"left\"><img src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/add2410_no_image.png\" alt=\"No image\"></div>\n                <div class=\"right\">\n                    <p class=\"text\">\n                        昨今自分の口に入れるものがどこで作られているか気になる方が増えてきました。<br class=\"spOnly\">\n                        <br>ペットも同じく、「一体どんな人が作っているのか？」そんな声が増えてきました。<br class=\"spOnly\">\n                        <br>komachi-na- はどんな人がどんな気持ちで作っているか生産者の声を公開しています。<br class=\"spOnly\">\n                        <br>愛情がたくさん詰まって作られた野菜やお米、お菓子だから素材本来のおいしさがギュっと詰まっています。\n                    </p>\n                </div>\n            </div>\n\n            <a href=\"\" class=\"btn black\">生産者について詳しく知る</a>\n\n        </div>\n\n    </section>\n\n    <section id=\"amazake\" class=\"wrap\">\n        <h2>ワンコに甘酒？</h2>\n\n        <div class=\"flex\">\n            <div class=\"left\"><img src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/add2410_amazeke.png\" alt=\"テーブルに並ぶ甘酒\"></div>\n            <div class=\"right\">\n                <p>\n                    飲む点滴と言われている甘酒ですが\n                    <br>実はワンコにも栄養満点！\n                </p>\n                <p>\n                    疲労回復や、元気がない時、普段からの予防\n                    <br>様々な効果が期待できる「甘酒」\n                </p>\n                <p>\n                    秋田オリジナル米麹「あめこうじ」を使用し\n                    <br>上品でしっかりとした甘味が特徴です。\n                    <br>「オリゴ糖」や、麹に含まれる食物繊維が腸内の乳酸菌を増加させるので腸内環境の改善にも！\n                </p>\n            </div>\n        </div>\n\n        <a href=\"\" class=\"btn white\">view more</a>\n\n    </section>\n\n    <section id=\"value\" class=\"gray\">\n        <div class=\"wrap\">\n            <h2>Value</h2>\n            <ul>\n                <li>\n                    <p class=\"num\">01.</p>\n                    <p class=\"text\">\n                        主に秋田の良質な食材・素材を使用し「パートナーに安心 ・安全そして美味しい」を提供します。\n                    </p>\n                </li>\n                <li>\n                    <p class=\"num\">02.</p>\n                    <p class=\"text\">\n                        オーナーとパートナーが「美味しさ」を共有できる、ヒューマン・グレード（HG）以上のヒューマン・デリシャス・グレード（HDG）を目指します。\n                    </p>\n                </li>\n                <li>\n                    <p class=\"num\">03.</p>\n                    <p class=\"text\">\n                        パートナーとの時間が長く、楽しく、健やかであるために「アンチエイジング」「QOL（クオリティ・オブ・ライフ）」に配慮した商品を提供します。\n                    </p>\n                </li>\n                <li>\n                    <p class=\"num\">04.</p>\n                    <p class=\"text\">\n                        オーナーとパートナーの生活が少しでも「華やか」に、「ときめき」と商品の「こだわり」を感じられる美しいパッケージを常に追求します。\n                    </p>\n                </li>\n            </ul>\n        </div>\n    </section>\n\n    <section id=\"outro\" class=\"wrap\">\n        <h2>\n            秋田の良質な素材を使った、\n            <br>ペットのための<br>安心･安全、そして、\n            <br>美味しいごはんシリーズ\n        </h2>\n\n        <p class=\"text\">\n            「こまち」=美しい\n            <br>「こまち」=美味しい\n            <br>「こまち」=やさしい\n            <br>\n            <br>「こまち」なペットフード<br class=\"spOnly\"> ＝ komachi-na-\n        </p>\n    </section>\n\n    <section id=\"links\">\n        <ul class=\"btns wrap\">\n            <li><a href=\"https://komachina.com/pages/kodawari\"><img src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/add2410_bnr_kodawari.png\" alt=\"素材へのこだわり\"></a></li>\n            <li><a href=\"https://komachina.com/pages/voice\"><img src=\"https://cdn.shopify.com/s/files/1/0639/9980/3492/files/add2410_bnr_voice.png\" alt=\"お客様の声\"></a></li>\n        </ul>\n    </section>\n\n</main>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_4C4Nj6"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
+    }
+  },
+  "order": [
+    "33cfb4ce-3696-442f-a3ae-7cf62699d3db",
+    "advanced_content_yWEeMF"
+  ]
+}
